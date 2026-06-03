@@ -130,11 +130,10 @@ To update a database that is already in the catalog:
 
 1. Edit its `databases/<slug>/metadata.json` with the new or corrected information.
 2. If changing tags or categories, verify they pass schema validation.
-3. If updating `github_stars`, round to the nearest 100.
-4. Run `python3 scripts/validate-metadata.py` and `bash scripts/build-index.sh`.
-5. Open a PR explaining what changed and why.
+3. Run `python3 scripts/validate-metadata.py` and `bash scripts/build-index.sh`.
+4. Open a PR explaining what changed and why.
 
-The monthly [staleness check](.github/workflows/staleness-check.yml) workflow prints warnings when `github_stars` may be stale, but it does not block builds. Maintainers may prompt you to refresh star counts during review.
+The [weekly star refresh](.github/workflows/update-stars.yml) workflow keeps `github_stars` up to date automatically. You can also run `python3 scripts/update-stars.py` locally to fetch live counts — the script pulls exact values from the GitHub API. The monthly [staleness check](.github/workflows/staleness-check.yml) prints warnings for metadata that has not been touched in 6+ months, but does not block builds.
 
 ## Site & Decision Tree
 
@@ -164,7 +163,7 @@ Before committing changes that touch the tag enum or categories, run `bash scrip
 ### Stale github_stars warning
 
 - A monthly CI job prints warnings when a `metadata.json` hasn't been updated in 6+ months.
-- To fix: check the current star count on GitHub, update `github_stars` (rounded to nearest 100), and push the change.
+- To fix: run `python3 scripts/update-stars.py` to fetch live counts for all databases, then rebuild the index with `bash scripts/build-index.sh`.
 
 ## Review Process
 
