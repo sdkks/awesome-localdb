@@ -3,14 +3,23 @@
   "name": "ObjectBox",
   "slug": "objectbox",
   "category": "vector",
-  "categories": ["vector", "mobile"],
+  "categories": [
+    "vector",
+    "mobile"
+  ],
   "description": "ObjectBox is a high-performance on-device database for objects and vectors, designed for mobile, edge, and IoT applications. It uses FlatBuffers for zero-copy serialization and stores data in a single file with ACID transactions. ObjectBox supports vector similarity search for on-device AI workloads (RAG, semantic search) alongside traditional object persistence with relations, queries, and automatic schema migrations. Available across C/C++, Go, Java/Kotlin, Swift, Dart/Flutter, and Python, it runs fully embedded with no server required and optional Data Sync for multi-device coordination.",
   "homepage_url": "https://objectbox.io",
   "repository_url": "https://github.com/objectbox/objectbox-java",
   "license": "Apache-2.0",
   "languages": [
-    {"name": "Python", "ecosystem": "pip"},
-    {"name": "Go", "ecosystem": "gomod"}
+    {
+      "name": "Python",
+      "ecosystem": "pip"
+    },
+    {
+      "name": "Go",
+      "ecosystem": "gomod"
+    }
   ],
   "format_on_disk": "FlatBuffers-based (single file)",
   "core_strengths": [
@@ -28,8 +37,17 @@
     "Offline-first applications with optional cross-device sync",
     "Embedded object database replacing SQLite for performance-sensitive workloads"
   ],
-  "tags": ["iot", "edge", "mobile", "persistent", "embedded-only", "sync", "single-file", "schemaless"],
-  "github_stars": 4600,
+  "tags": [
+    "iot",
+    "edge",
+    "mobile",
+    "persistent",
+    "embedded-only",
+    "sync",
+    "single-file",
+    "schemaless"
+  ],
+  "github_stars": 4610,
   "maintenance_status": "active",
   "first_release_year": 2017,
   "requires_server": false,

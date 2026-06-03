@@ -3,13 +3,18 @@
   "name": "PoloDB",
   "slug": "polodb",
   "category": "document",
-  "categories": ["document"],
+  "categories": [
+    "document"
+  ],
   "description": "PoloDB is an embedded document database written in Rust that implements a lightweight MongoDB. It stores data in BSON format over a RocksDB LSM-Tree storage engine, providing a MongoDB-like API with collections, documents, and transactions. PoloDB runs in-process with zero runtime dependencies beyond libc, making it highly portable across macOS, Linux, Windows, iOS, and Android. It supports both serde-based typed structs and raw BSON documents via the polodb_core::bson module, with explicit transaction control via Database::start_transaction.",
   "homepage_url": "https://www.polodb.org",
   "repository_url": "https://github.com/PoloDB/PoloDB",
   "license": "Apache-2.0",
   "languages": [
-    { "name": "Rust", "ecosystem": "cargo" }
+    {
+      "name": "Rust",
+      "ecosystem": "cargo"
+    }
   ],
   "format_on_disk": "BSON documents over RocksDB LSM-Tree (single file)",
   "core_strengths": [
@@ -38,7 +43,7 @@
     "cli"
   ],
   "custom_tags": [],
-  "github_stars": 1200,
+  "github_stars": 1208,
   "maintenance_status": "active",
   "first_release_year": 2020,
   "requires_server": false,

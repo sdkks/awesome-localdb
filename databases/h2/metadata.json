@@ -3,13 +3,18 @@
   "name": "H2",
   "slug": "h2",
   "category": "relational",
-  "categories": ["relational"],
+  "categories": [
+    "relational"
+  ],
   "description": "H2 is an embeddable Java SQL database engine. It runs in-process as a library with zero external dependencies, supports both disk-based and in-memory databases, and provides a JDBC API for Java applications. It features a browser-based console, encryption, full-text search, multi-version concurrency control, and a tiny footprint of around 2.5 MB. H2 is widely used in the Java ecosystem as an embedded database for development, testing, and lightweight production deployments.",
   "homepage_url": "https://www.h2database.com",
   "repository_url": "https://github.com/h2database/h2database",
   "license": "MPL-2.0 / EPL-1.0",
   "languages": [
-    { "name": "Java", "ecosystem": "maven" }
+    {
+      "name": "Java",
+      "ecosystem": "maven"
+    }
   ],
   "format_on_disk": "MVStore (single .mv.db file per database)",
   "core_strengths": [
@@ -35,7 +40,7 @@
     "single-file"
   ],
   "custom_tags": [],
-  "github_stars": 4600,
+  "github_stars": 4596,
   "maintenance_status": "active",
   "first_release_year": 2005,
   "requires_server": false,

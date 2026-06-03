@@ -3,14 +3,25 @@
   "name": "SurrealDB",
   "slug": "surrealdb",
   "category": "multi-model",
-  "categories": ["multi-model", "graph", "document", "vector"],
+  "categories": [
+    "multi-model",
+    "graph",
+    "document",
+    "vector"
+  ],
   "description": "SurrealDB is a multi-model database that unifies document, graph, vector, and relational paradigms into a single engine with a custom query language (SurrealQL). It runs embedded in Rust and Python with zero external dependencies via the local engine (surrealdb::engine::local), supports in-memory and persistent storage backends including RocksDB and SurrealKV, and offers full-text search, geospatial queries, and live query subscriptions. The same engine can also run as a distributed server with WebSocket and HTTP connectivity, making it suitable for local-first apps as well as cloud deployments.",
   "homepage_url": "https://surrealdb.com",
   "repository_url": "https://github.com/surrealdb/surrealdb",
   "license": "BSL-1.1",
   "languages": [
-    { "name": "Rust", "ecosystem": "cargo" },
-    { "name": "Python", "ecosystem": "pip" }
+    {
+      "name": "Rust",
+      "ecosystem": "cargo"
+    },
+    {
+      "name": "Python",
+      "ecosystem": "pip"
+    }
   ],
   "format_on_disk": "Multi-file (RocksDB LSM-Tree or SurrealKV SSTables) or in-memory",
   "core_strengths": [
@@ -43,7 +54,7 @@
     "WASM"
   ],
   "custom_tags": [],
-  "github_stars": 32000,
+  "github_stars": 32319,
   "maintenance_status": "active",
   "first_release_year": 2022,
   "requires_server": false,

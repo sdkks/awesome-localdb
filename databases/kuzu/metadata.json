@@ -3,17 +3,34 @@
   "name": "Kuzu",
   "slug": "kuzu",
   "category": "graph",
-  "categories": ["graph"],
+  "categories": [
+    "graph"
+  ],
   "description": "Kuzu is an embedded property graph database built for speed and scalability. It implements the openCypher query language on a columnar storage engine, making it well-suited for analytical graph workloads on large datasets. Kuzu supports vector search and full-text search natively, runs in-process with zero external dependencies, and provides client APIs for C++, Python, Rust, JavaScript, and Java.",
   "homepage_url": "https://kuzudb.com",
   "repository_url": "https://github.com/kuzudb/kuzu",
   "license": "MIT",
   "languages": [
-    {"name": "C++", "ecosystem": "conan"},
-    {"name": "Python", "ecosystem": "pip"},
-    {"name": "Rust", "ecosystem": "cargo"},
-    {"name": "JavaScript", "ecosystem": "npm"},
-    {"name": "Java", "ecosystem": "maven"}
+    {
+      "name": "C++",
+      "ecosystem": "conan"
+    },
+    {
+      "name": "Python",
+      "ecosystem": "pip"
+    },
+    {
+      "name": "Rust",
+      "ecosystem": "cargo"
+    },
+    {
+      "name": "JavaScript",
+      "ecosystem": "npm"
+    },
+    {
+      "name": "Java",
+      "ecosystem": "maven"
+    }
   ],
   "format_on_disk": "Columnar Storage (multi-file: node/rel groups, WAL, catalog)",
   "core_strengths": [
@@ -31,8 +48,17 @@
     "Knowledge graph traversal with Cypher path queries",
     "Hybrid search combining graph patterns with vector similarity"
   ],
-  "tags": ["persistent", "embedded-only", "multi-file", "columnar", "full-text-search", "ai-ml", "single-writer", "concurrent-readers"],
-  "github_stars": 3900,
+  "tags": [
+    "persistent",
+    "embedded-only",
+    "multi-file",
+    "columnar",
+    "full-text-search",
+    "ai-ml",
+    "single-writer",
+    "concurrent-readers"
+  ],
+  "github_stars": 3945,
   "maintenance_status": "active",
   "first_release_year": 2022,
   "requires_server": false,

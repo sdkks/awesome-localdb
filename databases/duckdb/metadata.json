@@ -3,17 +3,34 @@
   "name": "DuckDB",
   "slug": "duckdb",
   "category": "olap",
-  "categories": ["olap"],
+  "categories": [
+    "olap"
+  ],
   "description": "DuckDB is an in-process SQL OLAP database management system designed for analytical workloads. Often called the SQLite for analytics, it runs embedded within the host process with zero external dependencies, supports a rich SQL dialect with window functions and correlated subqueries, and can query Parquet, CSV, and JSON files directly without import. Its vectorized columnar execution engine delivers fast aggregation and joins on datasets that fit in memory or on a single machine.",
   "homepage_url": "https://duckdb.org",
   "repository_url": "https://github.com/duckdb/duckdb",
   "license": "MIT",
   "languages": [
-    { "name": "Python", "ecosystem": "pip" },
-    { "name": "Rust", "ecosystem": "cargo" },
-    { "name": "Java", "ecosystem": "maven" },
-    { "name": "JavaScript", "ecosystem": "npm" },
-    { "name": "C++", "ecosystem": "conan" }
+    {
+      "name": "Python",
+      "ecosystem": "pip"
+    },
+    {
+      "name": "Rust",
+      "ecosystem": "cargo"
+    },
+    {
+      "name": "Java",
+      "ecosystem": "maven"
+    },
+    {
+      "name": "JavaScript",
+      "ecosystem": "npm"
+    },
+    {
+      "name": "C++",
+      "ecosystem": "conan"
+    }
   ],
   "format_on_disk": "Vectorized Columnar Storage (single .duckdb file)",
   "core_strengths": [
@@ -43,7 +60,7 @@
     "cli"
   ],
   "custom_tags": [],
-  "github_stars": 38600,
+  "github_stars": 38574,
   "maintenance_status": "active",
   "first_release_year": 2019,
   "requires_server": false,

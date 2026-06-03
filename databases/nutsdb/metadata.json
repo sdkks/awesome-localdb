@@ -3,13 +3,18 @@
   "name": "NutsDB",
   "slug": "nutsdb",
   "category": "key-value",
-  "categories": ["key-value"],
+  "categories": [
+    "key-value"
+  ],
   "description": "NutsDB is a simple, fast, embeddable, persistent key/value store written in pure Go. It supports fully serializable transactions and Redis-like data structures including lists, sets, and sorted sets. Inspired by the Bitcask model, NutsDB uses an append-only log for writes with in-memory index structures for fast lookups, providing TTL support and efficient range scans. All operations happen inside transactions, making it suitable for embedded use in Go applications without external dependencies.",
   "homepage_url": "https://github.com/nutsdb/nutsdb",
   "repository_url": "https://github.com/nutsdb/nutsdb",
   "license": "Apache-2.0",
   "languages": [
-    {"name": "Go", "ecosystem": "gomod"}
+    {
+      "name": "Go",
+      "ecosystem": "gomod"
+    }
   ],
   "format_on_disk": "Bitcask-inspired append-only log with multiple data files and in-memory indexes",
   "core_strengths": [
@@ -27,9 +32,14 @@
     "Metadata and configuration storage in Go microservices",
     "Applications needing ordered sets and lists without an external database"
   ],
-  "tags": ["persistent", "embedded-only", "multi-file", "append-only"],
+  "tags": [
+    "persistent",
+    "embedded-only",
+    "multi-file",
+    "append-only"
+  ],
   "custom_tags": [],
-  "github_stars": 4000,
+  "github_stars": 3567,
   "maintenance_status": "active",
   "first_release_year": 2019,
   "requires_server": false,

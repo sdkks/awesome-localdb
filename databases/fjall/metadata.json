@@ -3,13 +3,18 @@
   "name": "fjall",
   "slug": "fjall",
   "category": "key-value",
-  "categories": ["key-value"],
+  "categories": [
+    "key-value"
+  ],
   "description": "Fjall is a log-structured, embeddable key-value storage engine written in 100% safe Rust. It uses an LSM-tree-based storage model similar to RocksDB, providing a thread-safe BTreeMap-like API. Fjall supports multiple keyspaces (analogous to column families) with cross-keyspace atomic semantics, range and prefix searching with forward and reverse iteration, optional serializable transactions, built-in compression (LZ4 by default), and automatic background maintenance. It is designed as an embeddable library, not a standalone database server, and has no notion of columns or query language.",
   "homepage_url": "https://fjall-rs.github.io",
   "repository_url": "https://github.com/fjall-rs/fjall",
   "license": "Apache-2.0",
   "languages": [
-    {"name": "Rust", "ecosystem": "cargo"}
+    {
+      "name": "Rust",
+      "ecosystem": "cargo"
+    }
   ],
   "format_on_disk": "LSM-Tree (SST files + WAL journal)",
   "core_strengths": [
@@ -27,9 +32,16 @@
     "Applications requiring ordered key iteration with range and prefix scans",
     "Workloads benefiting from LSM-tree write amplification characteristics"
   ],
-  "tags": ["persistent", "embedded-only", "compression", "multi-file", "append-only", "concurrent-readers"],
+  "tags": [
+    "persistent",
+    "embedded-only",
+    "compression",
+    "multi-file",
+    "append-only",
+    "concurrent-readers"
+  ],
   "custom_tags": [],
-  "github_stars": 2100,
+  "github_stars": 2091,
   "maintenance_status": "active",
   "first_release_year": 2024,
   "requires_server": false,

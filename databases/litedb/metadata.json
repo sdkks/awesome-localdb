@@ -3,13 +3,18 @@
   "name": "LiteDB",
   "slug": "litedb",
   "category": "document",
-  "categories": ["document"],
+  "categories": [
+    "document"
+  ],
   "description": "LiteDB is a lightweight, embedded NoSQL document database for .NET, inspired by MongoDB. It stores data as BSON (Binary JSON) documents in a single data file with no server or configuration required. LiteDB provides a fluent API, LINQ query support, ACID transactions, and cross-collection references, making it ideal for desktop, mobile (Xamarin), and small web applications that need a zero-configuration embedded database.",
   "homepage_url": "https://www.litedb.org",
   "repository_url": "https://github.com/mbdavid/LiteDB",
   "license": "MIT",
   "languages": [
-    {"name": "C#", "ecosystem": "nuget"}
+    {
+      "name": "C#",
+      "ecosystem": "nuget"
+    }
   ],
   "format_on_disk": "Binary JSON (BSON) Single File",
   "core_strengths": [
@@ -28,9 +33,17 @@
     "Embedded document storage where MongoDB client-server is overkill",
     "Prototyping and small-scale .NET applications with zero setup"
   ],
-  "tags": ["single-file", "schemaless", "embedded-only", "json-native", "desktop", "mobile", "persistent"],
+  "tags": [
+    "single-file",
+    "schemaless",
+    "embedded-only",
+    "json-native",
+    "desktop",
+    "mobile",
+    "persistent"
+  ],
   "custom_tags": [],
-  "github_stars": 9000,
+  "github_stars": 9403,
   "maintenance_status": "active",
   "first_release_year": 2014,
   "requires_server": false,

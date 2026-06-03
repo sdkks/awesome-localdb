@@ -3,13 +3,18 @@
   "name": "AceBase",
   "slug": "acebase",
   "category": "document",
-  "categories": ["document"],
+  "categories": [
+    "document"
+  ],
   "description": "AceBase is a fast, low-memory, transaction-capable NoSQL document database for Node.js and the browser with realtime data change notifications. Inspired by the Firebase Realtime Database API, it stores JSON-serializable data (objects, arrays, strings, numbers, booleans, dates, bigints, and binary) in a binary storage engine with support for regular, fulltext, geo, and array indexes. AceBase runs entirely embedded without a server process, supports realtime subscriptions with child_added/child_changed/child_removed/value/mutated events, live data proxies for in-memory reactive objects, transactions, schemas for data validation, and optional SQLite/MSSQL backends. A separate acebase-server package is available for client-server deployments with built-in auth and WebSocket sync.",
   "homepage_url": "https://github.com/appy-one/acebase",
   "repository_url": "https://github.com/appy-one/acebase",
   "license": "MIT",
   "languages": [
-    {"name": "JavaScript", "ecosystem": "npm"}
+    {
+      "name": "JavaScript",
+      "ecosystem": "npm"
+    }
   ],
   "format_on_disk": "Binary storage engine with JSON serialization; optional IndexedDB adapter for browsers and SQLite/MSSQL backends",
   "core_strengths": [
@@ -29,9 +34,21 @@
     "Rapid prototyping with a Firebase-like API without external service dependencies",
     "Multi-device synchronization via acebase-server with WebSocket-based sync"
   ],
-  "tags": ["reactive", "offline-first", "json-native", "embedded-only", "persistent", "schemaless", "schemaful", "browser", "desktop"],
-  "custom_tags": ["firebase-compatible"],
-  "github_stars": 500,
+  "tags": [
+    "reactive",
+    "offline-first",
+    "json-native",
+    "embedded-only",
+    "persistent",
+    "schemaless",
+    "schemaful",
+    "browser",
+    "desktop"
+  ],
+  "custom_tags": [
+    "firebase-compatible"
+  ],
+  "github_stars": 523,
   "maintenance_status": "active",
   "first_release_year": 2018,
   "requires_server": false,

@@ -3,15 +3,27 @@
   "name": "LanceDB",
   "slug": "lancedb",
   "category": "vector",
-  "categories": ["vector", "olap"],
+  "categories": [
+    "vector",
+    "olap"
+  ],
   "description": "LanceDB is a developer-friendly, open-source embedded vector database for multimodal AI. Built on the Lance columnar format (Arrow-native), it stores raw data, embeddings, and metadata in a single system. LanceDB supports zero-copy reads, fast vector search with IVF-PQ and HNSW indexes, and scales from local development to cloud object storage with separation of storage and compute.",
   "homepage_url": "https://lancedb.com",
   "repository_url": "https://github.com/lancedb/lancedb",
   "license": "Apache-2.0",
   "languages": [
-    {"name": "Python", "ecosystem": "pip"},
-    {"name": "Rust", "ecosystem": "cargo"},
-    {"name": "TypeScript", "ecosystem": "npm"}
+    {
+      "name": "Python",
+      "ecosystem": "pip"
+    },
+    {
+      "name": "Rust",
+      "ecosystem": "cargo"
+    },
+    {
+      "name": "TypeScript",
+      "ecosystem": "npm"
+    }
   ],
   "format_on_disk": "Lance Columnar Format (Arrow-native, multi-file)",
   "core_strengths": [
@@ -29,8 +41,17 @@
     "ML model training data storage with embeddings",
     "Semantic search over documents with metadata filtering"
   ],
-  "tags": ["single-file", "columnar", "persistent", "ai-ml", "rag", "embedded-only", "multi-file", "blob-storage"],
-  "github_stars": 10500,
+  "tags": [
+    "single-file",
+    "columnar",
+    "persistent",
+    "ai-ml",
+    "rag",
+    "embedded-only",
+    "multi-file",
+    "blob-storage"
+  ],
+  "github_stars": 10488,
   "maintenance_status": "active",
   "first_release_year": 2022,
   "requires_server": false,

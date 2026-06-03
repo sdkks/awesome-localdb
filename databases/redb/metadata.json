@@ -3,13 +3,18 @@
   "name": "redb",
   "slug": "redb",
   "category": "key-value",
-  "categories": ["key-value"],
+  "categories": [
+    "key-value"
+  ],
   "description": "redb is a simple, portable, high-performance, ACID-compliant embedded key-value store written in pure Rust. It uses a collection of copy-on-write B-trees for storage, providing MVCC support that allows a writer and concurrent readers to operate without blocking each other. The entire database is stored in a single file, making it easy to manage and deploy. redb is thread-safe by default and exposes a type-safe API via TableDefinition and MultimapTableDefinition, supporting arbitrary Rust types as keys and values. It is loosely inspired by LMDB but implemented entirely in Rust with no C dependencies, making it easy to cross-compile and embed in any Rust project.",
   "homepage_url": "https://www.redb.org",
   "repository_url": "https://github.com/cberner/redb",
   "license": "Apache-2.0 OR MIT",
   "languages": [
-    {"name": "Rust", "ecosystem": "cargo"}
+    {
+      "name": "Rust",
+      "ecosystem": "cargo"
+    }
   ],
   "format_on_disk": "Copy-on-Write B-Tree (single file)",
   "core_strengths": [
@@ -27,9 +32,16 @@
     "Edge and IoT applications where pure Rust cross-compilation matters",
     "Replacements for LMDB in pure-Rust codebases"
   ],
-  "tags": ["single-file", "persistent", "embedded-only", "copy-on-write", "concurrent-readers", "single-writer"],
+  "tags": [
+    "single-file",
+    "persistent",
+    "embedded-only",
+    "copy-on-write",
+    "concurrent-readers",
+    "single-writer"
+  ],
   "custom_tags": [],
-  "github_stars": 3500,
+  "github_stars": 4550,
   "maintenance_status": "active",
   "first_release_year": 2021,
   "requires_server": false,

@@ -3,13 +3,18 @@
   "name": "LevelDB",
   "slug": "leveldb",
   "category": "key-value",
-  "categories": ["key-value"],
+  "categories": [
+    "key-value"
+  ],
   "description": "LevelDB is a fast, lightweight key-value storage library written at Google that provides an ordered mapping from string keys to string values. It uses a Log-Structured Merge-Tree (LSM-Tree) design for high write throughput and efficient range scans, storing data in a compact set of SSTable files with a write-ahead log for crash safety. Designed as a foundational building block rather than a full database, LevelDB is embedded directly into applications and has inspired numerous derivatives including RocksDB and HyperLevelDB.",
   "homepage_url": "https://github.com/google/leveldb",
   "repository_url": "https://github.com/google/leveldb",
   "license": "BSD-3-Clause",
   "languages": [
-    {"name": "Python", "ecosystem": "pip"}
+    {
+      "name": "Python",
+      "ecosystem": "pip"
+    }
   ],
   "format_on_disk": "LSM-Tree (SSTable files + WAL)",
   "core_strengths": [
@@ -26,9 +31,16 @@
     "Learning LSM-tree internals through a clean reference implementation",
     "Embedded storage in CLI tools and lightweight daemons"
   ],
-  "tags": ["multi-file", "persistent", "compression", "embedded-only", "single-writer", "concurrent-readers"],
+  "tags": [
+    "multi-file",
+    "persistent",
+    "compression",
+    "embedded-only",
+    "single-writer",
+    "concurrent-readers"
+  ],
   "custom_tags": [],
-  "github_stars": 37000,
+  "github_stars": 39112,
   "maintenance_status": "slow",
   "first_release_year": 2011,
   "requires_server": false,

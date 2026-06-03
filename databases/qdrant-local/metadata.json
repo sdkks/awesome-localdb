@@ -3,13 +3,18 @@
   "name": "Qdrant Local Mode",
   "slug": "qdrant-local",
   "category": "vector",
-  "categories": ["vector"],
+  "categories": [
+    "vector"
+  ],
   "description": "Qdrant Local Mode is an embedded, in-process implementation of the Qdrant vector search engine that runs entirely within the Python client with no external server required. It provides the full Qdrant API surface — collection CRUD, point insertion and management, vector similarity search with payload filtering, and hybrid search — using brute-force numpy-based search with optional SQLite-backed persistence. The same client code seamlessly transitions to Qdrant Server or Qdrant Cloud for production deployments. Local Mode is ideal for development, testing, prototyping, and small-scale datasets up to approximately 20,000 points per collection.",
   "homepage_url": "https://qdrant.tech",
   "repository_url": "https://github.com/qdrant/qdrant",
   "license": "Apache-2.0",
   "languages": [
-    {"name": "Python", "ecosystem": "pip"}
+    {
+      "name": "Python",
+      "ecosystem": "pip"
+    }
   ],
   "format_on_disk": "SQLite-backed persistence (multi-file per storage directory) or ephemeral in-memory",
   "core_strengths": [
@@ -27,8 +32,15 @@
     "Learning the Qdrant API without deploying infrastructure",
     "AI/ML experimentation with vector similarity search in notebooks"
   ],
-  "tags": ["ai-ml", "rag", "embedded-only", "also-server", "persistent", "multi-file"],
-  "github_stars": 22000,
+  "tags": [
+    "ai-ml",
+    "rag",
+    "embedded-only",
+    "also-server",
+    "persistent",
+    "multi-file"
+  ],
+  "github_stars": 31769,
   "maintenance_status": "active",
   "first_release_year": 2020,
   "requires_server": false,

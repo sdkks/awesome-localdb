@@ -3,13 +3,18 @@
   "name": "LokiJS",
   "slug": "lokijs",
   "category": "document",
-  "categories": ["document"],
+  "categories": [
+    "document"
+  ],
   "description": "LokiJS is an in-memory, document-oriented JavaScript database with a MongoDB-like API. It stores collections of plain JavaScript objects, with built-in DynamicView for persistent query result sets, and supports optional persistence adapters for saving data to IndexedDB, WebSQL, localStorage, or a local JSON file. LokiJS runs entirely in-process in Node.js and browsers with zero external dependencies, making it ideal for mobile apps, Electron apps, and single-page applications that need fast local document storage.",
   "homepage_url": "https://github.com/techfort/LokiJS",
   "repository_url": "https://github.com/techfort/LokiJS",
   "license": "MIT",
   "languages": [
-    {"name": "JavaScript", "ecosystem": "npm"}
+    {
+      "name": "JavaScript",
+      "ecosystem": "npm"
+    }
   ],
   "format_on_disk": "In-Memory with optional persistence via JSON file, IndexedDB, WebSQL, or localStorage adapters",
   "core_strengths": [
@@ -27,9 +32,15 @@
     "Prototyping and rapid development with a MongoDB-like query pattern",
     "Offline-first apps using in-memory storage with periodic persistence saves"
   ],
-  "tags": ["in-memory", "persistent", "schemaless", "json-native", "embedded-only"],
+  "tags": [
+    "in-memory",
+    "persistent",
+    "schemaless",
+    "json-native",
+    "embedded-only"
+  ],
   "custom_tags": [],
-  "github_stars": 6800,
+  "github_stars": 6835,
   "maintenance_status": "archived",
   "first_release_year": 2013,
   "requires_server": false,

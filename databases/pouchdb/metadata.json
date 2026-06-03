@@ -3,13 +3,18 @@
   "name": "PouchDB",
   "slug": "pouchdb",
   "category": "document",
-  "categories": ["document"],
+  "categories": [
+    "document"
+  ],
   "description": "PouchDB is an open-source JavaScript database inspired by Apache CouchDB that runs entirely within the browser and Node.js. It enables applications to store data locally as JSON documents while offline, then synchronize bidirectionally with any CouchDB-compatible server when back online. PouchDB uses the browser's built-in IndexedDB for persistent local storage (LevelDB in Node.js), supports MapReduce queries, secondary indexes, and replication with conflict resolution. Its API supports callbacks, promises, and async/await.",
   "homepage_url": "https://pouchdb.com/",
   "repository_url": "https://github.com/pouchdb/pouchdb",
   "license": "Apache-2.0",
   "languages": [
-    {"name": "JavaScript", "ecosystem": "npm"}
+    {
+      "name": "JavaScript",
+      "ecosystem": "npm"
+    }
   ],
   "format_on_disk": "IndexedDB (browser) / LevelDB (Node.js)",
   "core_strengths": [
@@ -27,9 +32,18 @@
     "Browser-based tools and dashboards requiring persistent client-side storage",
     "Node.js apps needing a lightweight embedded document store with replication"
   ],
-  "tags": ["browser", "offline-first", "replication", "sync", "schemaless", "json-native", "persistent", "in-memory"],
+  "tags": [
+    "browser",
+    "offline-first",
+    "replication",
+    "sync",
+    "schemaless",
+    "json-native",
+    "persistent",
+    "in-memory"
+  ],
   "custom_tags": [],
-  "github_stars": 17000,
+  "github_stars": 17574,
   "maintenance_status": "active",
   "first_release_year": 2013,
   "requires_server": false,

@@ -3,13 +3,18 @@
   "name": "Bleve",
   "slug": "bleve",
   "category": "search",
-  "categories": ["search"],
+  "categories": [
+    "search"
+  ],
   "description": "Bleve is a modern text, numeric, geo-spatial, and vector indexing library for Go with a simple top-level API. It supports full-text search with TF-IDF scoring, faceted search, result highlighting, and custom analyzers for 30+ languages. Bleve stores inverted indexes on disk using BoltDB as the default persistent storage backend, runs entirely in-process with zero external dependencies, and indexes any Go struct via reflection or explicit field mappings. Its query DSL supports boolean, phrase, fuzzy, term range, geo distance, and prefix queries, making it suitable for embedded search in CLI tools, desktop apps, and microservices.",
   "homepage_url": "https://blevesearch.com",
   "repository_url": "https://github.com/blevesearch/bleve",
   "license": "Apache-2.0",
   "languages": [
-    {"name": "Go", "ecosystem": "gomod"}
+    {
+      "name": "Go",
+      "ecosystem": "gomod"
+    }
   ],
   "format_on_disk": "BoltDB-backed inverted index (B+Tree memory-mapped single file)",
   "core_strengths": [
@@ -27,9 +32,13 @@
     "Geo-spatial search for location-aware Go applications",
     "Building search-driven UIs with result highlighting and relevance scoring"
   ],
-  "tags": ["full-text-search", "embedded-only", "persistent"],
+  "tags": [
+    "full-text-search",
+    "embedded-only",
+    "persistent"
+  ],
   "custom_tags": [],
-  "github_stars": 10000,
+  "github_stars": 11082,
   "maintenance_status": "active",
   "first_release_year": 2015,
   "requires_server": false,

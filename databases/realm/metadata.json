@@ -3,13 +3,19 @@
   "name": "Realm",
   "slug": "realm",
   "category": "mobile",
-  "categories": ["mobile", "document"],
+  "categories": [
+    "mobile",
+    "document"
+  ],
   "description": "Realm is an offline-first mobile object database that runs directly inside phones, tablets, wearables, and desktop apps. It stores typed objects with automatic indexing and provides real-time reactive queries that auto-update when data changes. Supporting Swift, Kotlin, Java, JavaScript/TypeScript, C#, and .NET, Realm offers zero-copy reads, ACID transactions, and schema migration with minimal boilerplate. It includes an optional device sync service for multi-device data coordination, making it a complete replacement for SQLite and Core Data in mobile applications.",
   "homepage_url": "https://realm.io",
   "repository_url": "https://github.com/realm/realm-swift",
   "license": "Apache-2.0",
   "languages": [
-    {"name": "JavaScript", "ecosystem": "npm"}
+    {
+      "name": "JavaScript",
+      "ecosystem": "npm"
+    }
   ],
   "format_on_disk": "B+ Tree memory-mapped files (single-file per Realm, optional encryption)",
   "core_strengths": [
@@ -27,8 +33,17 @@
     "Replacing SQLite and Core Data with a simpler object-based mobile API",
     "Apps that need optional cloud sync without rearchitecting the local data layer"
   ],
-  "tags": ["mobile", "offline-first", "reactive", "sync", "persistent", "single-file", "encryption", "schemaful"],
-  "github_stars": 16600,
+  "tags": [
+    "mobile",
+    "offline-first",
+    "reactive",
+    "sync",
+    "persistent",
+    "single-file",
+    "encryption",
+    "schemaful"
+  ],
+  "github_stars": 16605,
   "maintenance_status": "slow",
   "first_release_year": 2014,
   "requires_server": false,

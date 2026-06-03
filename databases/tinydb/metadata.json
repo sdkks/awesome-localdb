@@ -3,13 +3,18 @@
   "name": "TinyDB",
   "slug": "tinydb",
   "category": "document",
-  "categories": ["document"],
+  "categories": [
+    "document"
+  ],
   "description": "TinyDB is a lightweight, document-oriented database written in pure Python with no external dependencies. It stores data as JSON files and provides a clean, ORM-like query interface. Designed for small to medium-sized datasets, TinyDB loads the entire database into memory on startup, making it fast for reads but unsuitable for large data volumes.",
   "homepage_url": "https://tinydb.readthedocs.io",
   "repository_url": "https://github.com/msiemens/tinydb",
   "license": "MIT",
   "languages": [
-    {"name": "Python", "ecosystem": "pip"}
+    {
+      "name": "Python",
+      "ecosystem": "pip"
+    }
   ],
   "format_on_disk": "Plain Text JSON File",
   "core_strengths": [
@@ -27,9 +32,17 @@
     "Simple document storage for scripts and notebooks",
     "Embedded use where SQL is overkill"
   ],
-  "tags": ["single-file", "schemaless", "persistent", "json-native", "embedded-only", "desktop", "cli"],
+  "tags": [
+    "single-file",
+    "schemaless",
+    "persistent",
+    "json-native",
+    "embedded-only",
+    "desktop",
+    "cli"
+  ],
   "custom_tags": [],
-  "github_stars": 7000,
+  "github_stars": 7521,
   "maintenance_status": "active",
   "first_release_year": 2013,
   "requires_server": false,

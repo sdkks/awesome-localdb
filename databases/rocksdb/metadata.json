@@ -3,14 +3,22 @@
   "name": "RocksDB",
   "slug": "rocksdb",
   "category": "key-value",
-  "categories": ["key-value"],
+  "categories": [
+    "key-value"
+  ],
   "description": "RocksDB is a high-performance embedded key-value store forked from Google's LevelDB and developed by Meta. Optimized for fast, low-latency storage on flash and persistent memory, it uses a Log-Structured Merge-Tree (LSM-Tree) design to deliver exceptional write throughput and efficient range scans. RocksDB is the storage engine behind MySQL (MyRocks), MongoDB (MongoRocks), Apache Flink, and countless distributed systems, offering fine-grained tuning of compaction, compression, bloom filters, and column families for workload-specific performance.",
   "homepage_url": "https://rocksdb.org",
   "repository_url": "https://github.com/facebook/rocksdb",
   "license": "Apache-2.0",
   "languages": [
-    {"name": "Python", "ecosystem": "pip"},
-    {"name": "Rust", "ecosystem": "cargo"}
+    {
+      "name": "Python",
+      "ecosystem": "pip"
+    },
+    {
+      "name": "Rust",
+      "ecosystem": "cargo"
+    }
   ],
   "format_on_disk": "LSM-Tree (SST files + WAL)",
   "core_strengths": [
@@ -27,9 +35,17 @@
     "Local metadata and state storage in streaming processors",
     "Real-time analytics on time-series append data"
   ],
-  "tags": ["multi-file", "persistent", "concurrent-readers", "compression", "embedded-only", "data-pipeline", "single-writer"],
+  "tags": [
+    "multi-file",
+    "persistent",
+    "concurrent-readers",
+    "compression",
+    "embedded-only",
+    "data-pipeline",
+    "single-writer"
+  ],
   "custom_tags": [],
-  "github_stars": 29900,
+  "github_stars": 31722,
   "maintenance_status": "active",
   "first_release_year": 2013,
   "requires_server": false,

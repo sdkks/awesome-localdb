@@ -3,16 +3,30 @@
   "name": "EJDB2",
   "slug": "ejdb2",
   "category": "document",
-  "categories": ["document"],
+  "categories": [
+    "document"
+  ],
   "description": "EJDB2 is an embeddable JSON database engine written in C, published under the MIT license. It stores BSON documents in a single file backed by the IOWOW key/value storage engine. It features a powerful XPath-inspired query language (JQL) with support for collection joins, projections, sorting, and data modification. EJDB2 also includes an optional HTTP/WebSocket REST endpoint for network-accessible deployments. Language bindings exist for C, Go, Node.js, and Python.",
   "homepage_url": "https://github.com/Softmotions/ejdb",
   "repository_url": "https://github.com/Softmotions/ejdb",
   "license": "MIT",
   "languages": [
-    {"name": "C", "ecosystem": "conan"},
-    {"name": "Go", "ecosystem": "gomod"},
-    {"name": "JavaScript", "ecosystem": "npm"},
-    {"name": "Python", "ecosystem": "pip"}
+    {
+      "name": "C",
+      "ecosystem": "conan"
+    },
+    {
+      "name": "Go",
+      "ecosystem": "gomod"
+    },
+    {
+      "name": "JavaScript",
+      "ecosystem": "npm"
+    },
+    {
+      "name": "Python",
+      "ecosystem": "pip"
+    }
   ],
   "format_on_disk": "Single file (IOWOW key/value storage engine with BSON documents)",
   "core_strengths": [
@@ -30,9 +44,15 @@
     "Lightweight document store for microservices and prototypes",
     "Applications needing JSON-native querying with join capabilities"
   ],
-  "tags": ["json-native", "persistent", "iot", "edge", "embedded-only"],
+  "tags": [
+    "json-native",
+    "persistent",
+    "iot",
+    "edge",
+    "embedded-only"
+  ],
   "custom_tags": [],
-  "github_stars": 1500,
+  "github_stars": 1473,
   "maintenance_status": "active",
   "first_release_year": 2019,
   "requires_server": false,

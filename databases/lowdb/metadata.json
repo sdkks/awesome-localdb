@@ -3,13 +3,18 @@
   "name": "LowDB",
   "slug": "lowdb",
   "category": "document",
-  "categories": ["document"],
+  "categories": [
+    "document"
+  ],
   "description": "LowDB is a tiny, type-safe local JSON database for Node.js and the browser. It stores data as a single JSON file and exposes it as a plain JavaScript object with no query language to learn -- if you know JavaScript, you know how to use LowDB. Data is written atomically via JSON.stringify. Designed for small projects, prototyping, and configuration storage where a full database is overkill.",
   "homepage_url": "https://github.com/typicode/lowdb",
   "repository_url": "https://github.com/typicode/lowdb",
   "license": "MIT",
   "languages": [
-    {"name": "JavaScript", "ecosystem": "npm"}
+    {
+      "name": "JavaScript",
+      "ecosystem": "npm"
+    }
   ],
   "format_on_disk": "Plain Text JSON File (Single File)",
   "core_strengths": [
@@ -27,9 +32,17 @@
     "Browser localStorage wrapper with a clean API for small web apps",
     "Mock database in unit tests with zero setup"
   ],
-  "tags": ["single-file", "schemaless", "json-native", "embedded-only", "cli", "desktop", "browser"],
+  "tags": [
+    "single-file",
+    "schemaless",
+    "json-native",
+    "embedded-only",
+    "cli",
+    "desktop",
+    "browser"
+  ],
   "custom_tags": [],
-  "github_stars": 22500,
+  "github_stars": 22546,
   "maintenance_status": "active",
   "first_release_year": 2014,
   "requires_server": false,

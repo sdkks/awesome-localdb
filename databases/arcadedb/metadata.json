@@ -3,14 +3,28 @@
   "name": "ArcadeDB",
   "slug": "arcadedb",
   "category": "multi-model",
-  "categories": ["multi-model", "graph", "document", "vector", "key-value", "search", "time-series"],
+  "categories": [
+    "multi-model",
+    "graph",
+    "document",
+    "vector",
+    "key-value",
+    "search",
+    "time-series"
+  ],
   "description": "ArcadeDB is a multi-model database that natively supports graphs, documents, key-value, vectors, full-text search, and time-series in a single engine with ACID transactions. It runs embedded inside Java (JVM) and Python applications via the arcadedb-embedded package, which bundles a Java runtime with the wheel for zero-dependency Python use. The same engine can also run as a distributed server with Raft-based HA replication. ArcadeDB supports SQL, OpenCypher (97.8% TCK pass rate), Gremlin, GraphQL, and MongoDB query language, making it the most versatile embedded multi-model database.",
   "homepage_url": "https://arcadedb.com",
   "repository_url": "https://github.com/ArcadeData/arcadedb",
   "license": "Apache-2.0",
   "languages": [
-    { "name": "Java", "ecosystem": "maven" },
-    { "name": "Python", "ecosystem": "pip" }
+    {
+      "name": "Java",
+      "ecosystem": "maven"
+    },
+    {
+      "name": "Python",
+      "ecosystem": "pip"
+    }
   ],
   "format_on_disk": "Multi-file (WAL journal + LSM-Tree indexes + columnar time-series chunks)",
   "core_strengths": [
@@ -43,7 +57,7 @@
     "json-native"
   ],
   "custom_tags": [],
-  "github_stars": 900,
+  "github_stars": 917,
   "maintenance_status": "active",
   "first_release_year": 2021,
   "requires_server": false,

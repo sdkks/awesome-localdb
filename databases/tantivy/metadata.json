@@ -3,13 +3,18 @@
   "name": "Tantivy",
   "slug": "tantivy",
   "category": "search",
-  "categories": ["search"],
+  "categories": [
+    "search"
+  ],
   "description": "Tantivy is a full-text search engine library written in Rust, inspired by Apache Lucene. It provides inverted indexing, BM25 scoring, tokenization, fuzzy search, and faceted aggregation, all within a single embeddable library with zero external dependencies. Indexes persist to disk using a Lucene-like segment-based architecture with background merging, making it suitable for applications that need fast, relevance-ranked full-text search over local document collections.",
   "homepage_url": "https://docs.rs/tantivy/",
   "repository_url": "https://github.com/quickwit-oss/tantivy",
   "license": "MIT",
   "languages": [
-    {"name": "Rust", "ecosystem": "cargo"}
+    {
+      "name": "Rust",
+      "ecosystem": "cargo"
+    }
   ],
   "format_on_disk": "Inverted Index Segments (multi-file, Lucene-like segment architecture)",
   "core_strengths": [
@@ -27,9 +32,17 @@
     "Embedding search into a Rust-based data pipeline or ETL tool",
     "Local knowledge base and personal wiki search"
   ],
-  "tags": ["full-text-search", "embedded-only", "persistent", "multi-file", "concurrent-readers", "cli", "desktop"],
+  "tags": [
+    "full-text-search",
+    "embedded-only",
+    "persistent",
+    "multi-file",
+    "concurrent-readers",
+    "cli",
+    "desktop"
+  ],
   "custom_tags": [],
-  "github_stars": 13000,
+  "github_stars": 15313,
   "maintenance_status": "active",
   "first_release_year": 2016,
   "requires_server": false,

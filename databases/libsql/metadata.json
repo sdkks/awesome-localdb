@@ -3,14 +3,23 @@
   "name": "libSQL",
   "slug": "libsql",
   "category": "relational",
-  "categories": ["relational", "vector"],
+  "categories": [
+    "relational",
+    "vector"
+  ],
   "description": "libSQL is an open-source, embeddable SQL database engine forked from SQLite by the Turso team. It is fully compatible with the SQLite file format and SQL dialect while adding modern features: native vector search for AI and RAG workloads, async I/O for non-blocking operations, WASM support for browser and edge environments, and embedded replicas that sync with remote databases. Written in Rust and C, libSQL is designed for applications that want SQLite's simplicity but need vector search, replication, or WebAssembly support.",
   "homepage_url": "https://turso.tech/libsql",
   "repository_url": "https://github.com/tursodatabase/libsql",
   "license": "MIT",
   "languages": [
-    { "name": "Python", "ecosystem": "pip" },
-    { "name": "Rust", "ecosystem": "cargo" }
+    {
+      "name": "Python",
+      "ecosystem": "pip"
+    },
+    {
+      "name": "Rust",
+      "ecosystem": "cargo"
+    }
   ],
   "format_on_disk": "B-Tree Pages — SQLite-compatible (Single File)",
   "core_strengths": [
@@ -44,7 +53,7 @@
     "vector-search"
   ],
   "custom_tags": [],
-  "github_stars": 14000,
+  "github_stars": 16801,
   "maintenance_status": "active",
   "first_release_year": 2022,
   "requires_server": false,

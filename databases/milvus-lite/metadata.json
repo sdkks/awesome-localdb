@@ -3,13 +3,18 @@
   "name": "Milvus Lite",
   "slug": "milvus-lite",
   "category": "vector",
-  "categories": ["vector"],
+  "categories": [
+    "vector"
+  ],
   "description": "Milvus Lite is the lightweight embedded version of Milvus, the high-performance vector database. Packaged inside pymilvus and installable via pip, it runs entirely in-process with no external dependencies. Connection is as simple as passing a local .db path to MilvusClient. It provides the full pymilvus API surface — collection CRUD, vector insertion, ANN search with scalar filtering, and metadata queries — so code written for Milvus Lite migrates seamlessly to Milvus Standalone, Milvus Distributed, or Zilliz Cloud.",
   "homepage_url": "https://milvus.io",
   "repository_url": "https://github.com/milvus-io/milvus",
   "license": "Apache-2.0",
   "languages": [
-    {"name": "Python", "ecosystem": "pip"}
+    {
+      "name": "Python",
+      "ecosystem": "pip"
+    }
   ],
   "format_on_disk": "LSM-style with WAL, immutable Parquet segments, and segment-level FAISS indexes (multi-file per data_dir)",
   "core_strengths": [
@@ -27,8 +32,16 @@
     "Small-scale semantic search in local CLI and desktop tools",
     "Learning the Milvus API without deploying infrastructure"
   ],
-  "tags": ["ai-ml", "rag", "embedded-only", "also-server", "persistent", "multi-file", "schemaless"],
-  "github_stars": 32000,
+  "tags": [
+    "ai-ml",
+    "rag",
+    "embedded-only",
+    "also-server",
+    "persistent",
+    "multi-file",
+    "schemaless"
+  ],
+  "github_stars": 44608,
   "maintenance_status": "active",
   "first_release_year": 2022,
   "requires_server": false,

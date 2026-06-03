@@ -3,16 +3,30 @@
   "name": "sqlite-vec",
   "slug": "sqlite-vec",
   "category": "vector",
-  "categories": ["vector"],
+  "categories": [
+    "vector"
+  ],
   "description": "sqlite-vec is an extremely small, fast enough vector search SQLite extension that runs anywhere SQLite runs. It stores vectors as compact BLOBs in regular SQLite tables and provides SQL functions for exact KNN search through virtual tables. With bindings for Python, Node.js, Rust, and Go, it brings vector search to edge devices, mobile apps, browser WASM, and server environments without additional infrastructure.",
   "homepage_url": "https://alexgarcia.xyz/sqlite-vec/",
   "repository_url": "https://github.com/asg017/sqlite-vec",
   "license": "MIT",
   "languages": [
-    {"name": "Python", "ecosystem": "pip"},
-    {"name": "JavaScript", "ecosystem": "npm"},
-    {"name": "Rust", "ecosystem": "cargo"},
-    {"name": "Go", "ecosystem": "gomod"}
+    {
+      "name": "Python",
+      "ecosystem": "pip"
+    },
+    {
+      "name": "JavaScript",
+      "ecosystem": "npm"
+    },
+    {
+      "name": "Rust",
+      "ecosystem": "cargo"
+    },
+    {
+      "name": "Go",
+      "ecosystem": "gomod"
+    }
   ],
   "format_on_disk": "SQLite extension (vectors stored as BLOBs in standard SQLite tables + virtual tables)",
   "core_strengths": [
@@ -30,8 +44,15 @@
     "Browser-based vector search via SQLite WASM builds",
     "Lightweight AI/ML feature storage alongside relational data"
   ],
-  "tags": ["sql-interface", "embedded-only", "ai-ml", "rag", "persistent", "single-file"],
-  "github_stars": 7700,
+  "tags": [
+    "sql-interface",
+    "embedded-only",
+    "ai-ml",
+    "rag",
+    "persistent",
+    "single-file"
+  ],
+  "github_stars": 7684,
   "maintenance_status": "active",
   "first_release_year": 2024,
   "requires_server": false,

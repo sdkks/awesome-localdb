@@ -3,13 +3,18 @@
   "name": "FalkorDBLite",
   "slug": "falkordblite",
   "category": "graph",
-  "categories": ["graph"],
+  "categories": [
+    "graph"
+  ],
   "description": "FalkorDBLite is an embedded, zero-configuration graph database for Python. It bundles a self-contained Redis server with the FalkorDB graph module, providing Cypher query support entirely in-process. No external server or daemon required -- just pip install and start building graph applications with property graphs, pattern matching, and relationship traversal. Based on redislite from Yahoo, it also exposes Redis key-value operations alongside graph capabilities.",
   "homepage_url": "https://docs.falkordb.com/operations/falkordblite/falkordblite-py.html",
   "repository_url": "https://github.com/FalkorDB/falkordblite",
   "license": "BSD-3-Clause",
   "languages": [
-    {"name": "Python", "ecosystem": "pip"}
+    {
+      "name": "Python",
+      "ecosystem": "pip"
+    }
   ],
   "format_on_disk": "Redis RDB (Single File + Sub-Process Server)",
   "core_strengths": [
@@ -26,9 +31,16 @@
     "Quick prototyping of property graph data models",
     "Embedded graph database in Python applications"
   ],
-  "tags": ["embedded-only", "persistent", "single-file"],
-  "custom_tags": ["cypher", "sub-process"],
-  "github_stars": 100,
+  "tags": [
+    "embedded-only",
+    "persistent",
+    "single-file"
+  ],
+  "custom_tags": [
+    "cypher",
+    "sub-process"
+  ],
+  "github_stars": 52,
   "maintenance_status": "active",
   "first_release_year": 2025,
   "requires_server": false,

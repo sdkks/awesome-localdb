@@ -3,13 +3,18 @@
   "name": "chDB",
   "slug": "chdb",
   "category": "olap",
-  "categories": ["olap"],
+  "categories": [
+    "olap"
+  ],
   "description": "chDB is an in-process SQL OLAP engine powered by ClickHouse. It embeds the full ClickHouse query engine directly into Python, enabling fast analytical queries on Parquet, CSV, JSON, Arrow, and 70+ other formats without a server. With zero external dependencies, minimized data copies via Python memoryview, and a pandas-compatible DataStore API supporting 630+ methods, chDB delivers up to 20x speedup over pandas for grouped aggregations and complex pipelines.",
   "homepage_url": "https://clickhouse.com/docs/chdb",
   "repository_url": "https://github.com/chdb-io/chdb",
   "license": "Apache-2.0",
   "languages": [
-    { "name": "Python", "ecosystem": "pip" }
+    {
+      "name": "Python",
+      "ecosystem": "pip"
+    }
   ],
   "format_on_disk": "ClickHouse MergeTree columnar format (persistent or in-memory)",
   "core_strengths": [
@@ -34,7 +39,7 @@
     "embedded-only"
   ],
   "custom_tags": [],
-  "github_stars": 22000,
+  "github_stars": 2691,
   "maintenance_status": "active",
   "first_release_year": 2023,
   "requires_server": false,

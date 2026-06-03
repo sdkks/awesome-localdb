@@ -3,13 +3,18 @@
   "name": "ChromaDB",
   "slug": "chromadb",
   "category": "vector",
-  "categories": ["vector"],
+  "categories": [
+    "vector"
+  ],
   "description": "ChromaDB is an open-source embedding database purpose-built for AI applications. It runs embedded in Python by default with a developer-friendly API and built-in embedding function integration. Widely adopted in the LangChain and LlamaIndex ecosystems, ChromaDB stores documents alongside their embeddings and metadata, supports vector similarity search with metadata filtering, and provides collection-based organization. A client-server mode is available for production deployments, but the default experience requires no external process.",
   "homepage_url": "https://trychroma.com",
   "repository_url": "https://github.com/chroma-core/chroma",
   "license": "Apache-2.0",
   "languages": [
-    {"name": "Python", "ecosystem": "pip"}
+    {
+      "name": "Python",
+      "ecosystem": "pip"
+    }
   ],
   "format_on_disk": "SQLite-backed (Single File) when persistent; ephemeral in-memory by default",
   "core_strengths": [
@@ -27,8 +32,17 @@
     "Storing and querying embeddings for recommendation systems",
     "Local-first AI data storage for desktop and CLI tools"
   ],
-  "tags": ["persistent", "ai-ml", "rag", "embedded-only", "single-file", "also-server", "schemaless", "json-native"],
-  "github_stars": 18000,
+  "tags": [
+    "persistent",
+    "ai-ml",
+    "rag",
+    "embedded-only",
+    "single-file",
+    "also-server",
+    "schemaless",
+    "json-native"
+  ],
+  "github_stars": 28195,
   "maintenance_status": "active",
   "first_release_year": 2022,
   "requires_server": false,

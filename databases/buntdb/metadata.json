@@ -3,13 +3,18 @@
   "name": "buntdb",
   "slug": "buntdb",
   "category": "key-value",
-  "categories": ["key-value"],
+  "categories": [
+    "key-value"
+  ],
   "description": "buntdb is an embeddable, in-memory key/value database for Go with custom indexing and geospatial support. It persists data to disk via an append-only file for durability, supports ACID transactions with multiple concurrent readers and a single writer, and provides B-tree and R-tree indexes for ordering, iteration, and spatial queries. JSON field indexing is powered by GJSON, enabling indexes on nested document fields. Built-in TTL expiration enables automatic item eviction.",
   "homepage_url": "https://github.com/tidwall/buntdb",
   "repository_url": "https://github.com/tidwall/buntdb",
   "license": "MIT",
   "languages": [
-    {"name": "Go", "ecosystem": "gomod"}
+    {
+      "name": "Go",
+      "ecosystem": "gomod"
+    }
   ],
   "format_on_disk": "Append-only file (AOF) with auto-shrink compaction",
   "core_strengths": [
@@ -27,9 +32,17 @@
     "JSON document indexing with queryable nested fields in a lightweight embedded DB",
     "Single-binary Go applications that need ordered iteration over key spaces"
   ],
-  "tags": ["in-memory", "persistent", "embedded-only", "spatial", "single-writer", "concurrent-readers", "append-only"],
+  "tags": [
+    "in-memory",
+    "persistent",
+    "embedded-only",
+    "spatial",
+    "single-writer",
+    "concurrent-readers",
+    "append-only"
+  ],
   "custom_tags": [],
-  "github_stars": 5000,
+  "github_stars": 4854,
   "maintenance_status": "active",
   "first_release_year": 2016,
   "requires_server": false,

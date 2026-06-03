@@ -1,0 +1,43 @@
+name: Update GitHub Stars
+
+on:
+  schedule:
+    # Weekly on Monday at 07:37 UTC
+    - cron: '37 7 * * 1'
+  workflow_dispatch:  # allow manual trigger
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-stars:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install jsonschema
+        run: pip install jsonschema
+
+      - name: Update github_stars from live API
+        run: python3 scripts/update-stars.py
+
+      - name: Rebuild site index
+        run: bash scripts/build-index.sh
+
+      - name: Create or update pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: 'chore: refresh github_stars from live API'
+          title: 'chore: refresh github stars'
+          body: |
+            Weekly automated update of `github_stars` in metadata files.
+
+            Ran `scripts/update-stars.py` and rebuilt `site/index.json`.
+          branch: chore/refresh-stars
+          delete-branch: true

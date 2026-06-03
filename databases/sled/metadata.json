@@ -3,13 +3,18 @@
   "name": "Sled",
   "slug": "sled",
   "category": "key-value",
-  "categories": ["key-value"],
+  "categories": [
+    "key-value"
+  ],
   "description": "Sled is a high-performance embedded key-value database written in Rust with an API similar to a threadsafe BTreeMap. It uses a lock-free Bw-Tree index and log-structured storage optimized for SSDs, providing fully serializable ACID transactions across multiple keyspaces. Sled supports atomic single-key operations including compare-and-swap and update-and-fetch, zero-copy reads, write batches, subscription/watch semantics on key prefixes, merge operators, and a crash-safe monotonic ID generator capable of 75-125 million IDs per second. The main branch contains an in-progress v1 rewrite with a new storage engine; the latest published release (0.34) uses the pre-rewrite architecture.",
   "homepage_url": "https://sled.rs",
   "repository_url": "https://github.com/spacejam/sled",
   "license": "Apache-2.0",
   "languages": [
-    {"name": "Rust", "ecosystem": "cargo"}
+    {
+      "name": "Rust",
+      "ecosystem": "cargo"
+    }
   ],
   "format_on_disk": "Log-structured Bw-Tree (multi-file with pagecache and sequential WAL segments)",
   "core_strengths": [
@@ -27,9 +32,16 @@
     "SSD-optimized local persistence for servers, desktops, and phones",
     "Persistent configuration and metadata storage in Rust CLI tools and services"
   ],
-  "tags": ["persistent", "embedded-only", "concurrent-readers", "compression", "append-only", "multi-file"],
+  "tags": [
+    "persistent",
+    "embedded-only",
+    "concurrent-readers",
+    "compression",
+    "append-only",
+    "multi-file"
+  ],
   "custom_tags": [],
-  "github_stars": 9000,
+  "github_stars": 9012,
   "maintenance_status": "slow",
   "first_release_year": 2016,
   "requires_server": false,

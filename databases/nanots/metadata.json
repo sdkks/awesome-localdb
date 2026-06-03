@@ -3,16 +3,30 @@
   "name": "NanoTS",
   "slug": "nanots",
   "category": "time-series",
-  "categories": ["time-series"],
+  "categories": [
+    "time-series"
+  ],
   "description": "NanoTS is a lightweight, high-performance embedded time-series database optimized for real-time streaming applications like video, finance, and IoT sensor data. It uses memory-mapped storage with lock-free data structures for lightning-fast writes (8.83us on SSD) and sub-microsecond reads. Supports pre-allocated or growable storage, multiple independent streams in a single file, bidirectional iteration with timestamp seeking, and crash recovery with frame-level atomicity. Like SQLite, it runs in-process with no server required.",
   "homepage_url": "https://nanots.io",
   "repository_url": "https://github.com/dicroce/nanots",
   "license": "Apache-2.0",
   "languages": [
-    { "name": "Python", "ecosystem": "pip" },
-    { "name": "Go", "ecosystem": "gomod" },
-    { "name": "Rust", "ecosystem": "cargo" },
-    { "name": "C++", "ecosystem": "conan" }
+    {
+      "name": "Python",
+      "ecosystem": "pip"
+    },
+    {
+      "name": "Go",
+      "ecosystem": "gomod"
+    },
+    {
+      "name": "Rust",
+      "ecosystem": "cargo"
+    },
+    {
+      "name": "C++",
+      "ecosystem": "conan"
+    }
   ],
   "format_on_disk": "Memory-Mapped Binary Blocks (single .nts file + SQLite metadata)",
   "core_strengths": [
@@ -32,9 +46,17 @@
     "Embedded robotics: lidar, IMU, GPS streams with time-aligned scrubbing",
     "Scientific data acquisition: multi-channel time-series at line rate"
   ],
-  "tags": ["persistent", "single-file", "iot", "edge", "embedded-only", "concurrent-readers", "single-writer"],
+  "tags": [
+    "persistent",
+    "single-file",
+    "iot",
+    "edge",
+    "embedded-only",
+    "concurrent-readers",
+    "single-writer"
+  ],
   "custom_tags": [],
-  "github_stars": 100,
+  "github_stars": 79,
   "maintenance_status": "active",
   "first_release_year": 2025,
   "requires_server": false,

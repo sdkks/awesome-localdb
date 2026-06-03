@@ -3,14 +3,22 @@
   "name": "SQLite",
   "slug": "sqlite",
   "category": "relational",
-  "categories": ["relational"],
+  "categories": [
+    "relational"
+  ],
   "description": "SQLite is a self-contained, serverless, zero-configuration SQL database engine. It is the most widely deployed database in the world, embedded in every mobile OS, every browser, and countless applications. SQLite is ACID-compliant, uses a single-file B-Tree format, and supports most of SQL-92.",
   "homepage_url": "https://sqlite.org",
   "repository_url": "https://github.com/sqlite/sqlite",
   "license": "Public Domain",
   "languages": [
-    {"name": "Python", "ecosystem": "pip"},
-    {"name": "Rust", "ecosystem": "cargo"}
+    {
+      "name": "Python",
+      "ecosystem": "pip"
+    },
+    {
+      "name": "Rust",
+      "ecosystem": "cargo"
+    }
   ],
   "format_on_disk": "B-Tree Pages (Single File)",
   "core_strengths": [
@@ -28,9 +36,20 @@
     "Offline-first web apps (via OPFS)",
     "Embedded systems and IoT devices"
   ],
-  "tags": ["single-file", "sql-interface", "schemaful", "persistent", "in-memory", "embedded-only", "mobile", "desktop", "cli", "row-based"],
+  "tags": [
+    "single-file",
+    "sql-interface",
+    "schemaful",
+    "persistent",
+    "in-memory",
+    "embedded-only",
+    "mobile",
+    "desktop",
+    "cli",
+    "row-based"
+  ],
   "custom_tags": [],
-  "github_stars": 9700,
+  "github_stars": 9738,
   "maintenance_status": "active",
   "first_release_year": 2000,
   "requires_server": false,

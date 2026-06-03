@@ -3,13 +3,18 @@
   "name": "bbolt",
   "slug": "bbolt",
   "category": "key-value",
-  "categories": ["key-value"],
+  "categories": [
+    "key-value"
+  ],
   "description": "bbolt is the maintained community fork of BoltDB, an embedded key/value database for Go. It stores data in a single memory-mapped file using a B+Tree structure, providing fully serializable ACID transactions with MVCC via copy-on-write semantics. Readers operate concurrently without blocking, while writes are serialized through a file lock. The pure-Go implementation is compact (under 5 KLOC) and has zero external dependencies. bbolt serves as the storage backend for etcd, the distributed key-value store that powers the Kubernetes control plane.",
   "homepage_url": "https://github.com/etcd-io/bbolt",
   "repository_url": "https://github.com/etcd-io/bbolt",
   "license": "MIT",
   "languages": [
-    {"name": "Go", "ecosystem": "gomod"}
+    {
+      "name": "Go",
+      "ecosystem": "gomod"
+    }
   ],
   "format_on_disk": "B+Tree memory-mapped (single file)",
   "core_strengths": [
@@ -26,9 +31,16 @@
     "Learning transactional key-value store internals from a clean, compact codebase",
     "Single-file application state persistence without external database dependencies"
   ],
-  "tags": ["single-file", "persistent", "copy-on-write", "embedded-only", "single-writer", "concurrent-readers"],
+  "tags": [
+    "single-file",
+    "persistent",
+    "copy-on-write",
+    "embedded-only",
+    "single-writer",
+    "concurrent-readers"
+  ],
   "custom_tags": [],
-  "github_stars": 9500,
+  "github_stars": 9541,
   "maintenance_status": "active",
   "first_release_year": 2013,
   "requires_server": false,

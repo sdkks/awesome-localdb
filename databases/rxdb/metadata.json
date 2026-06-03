@@ -3,13 +3,18 @@
   "name": "RxDB",
   "slug": "rxdb",
   "category": "document",
-  "categories": ["document"],
+  "categories": [
+    "document"
+  ],
   "description": "RxDB is a local-first, reactive NoSQL database for JavaScript applications. It stores JSON documents locally with schema validation and provides real-time reactive queries via RxJS observables. RxDB runs in browsers, Node.js, Electron, and React Native with pluggable storage backends (Dexie.js, IndexedDB, SQLite, and more). It supports offline-first replication with multiple protocols (HTTP, GraphQL, WebRTC, CouchDB, WebSocket, Firestore, NATS) and includes encryption, multi-tab support, and CRDT-based conflict resolution.",
   "homepage_url": "https://rxdb.info/",
   "repository_url": "https://github.com/pubkey/rxdb",
   "license": "Apache-2.0",
   "languages": [
-    {"name": "JavaScript", "ecosystem": "npm"}
+    {
+      "name": "JavaScript",
+      "ecosystem": "npm"
+    }
   ],
   "format_on_disk": "Pluggable: Dexie.js (default) / IndexedDB / SQLite / LocalStorage / Memory",
   "core_strengths": [
@@ -29,9 +34,22 @@
     "Electron/React Native apps needing local-first data with optional server sync",
     "Applications needing encrypted client-side storage with schema validation"
   ],
-  "tags": ["browser", "offline-first", "reactive", "replication", "sync", "schemaful", "json-native", "persistent", "encryption", "mobile", "desktop", "p2p"],
+  "tags": [
+    "browser",
+    "offline-first",
+    "reactive",
+    "replication",
+    "sync",
+    "schemaful",
+    "json-native",
+    "persistent",
+    "encryption",
+    "mobile",
+    "desktop",
+    "p2p"
+  ],
   "custom_tags": [],
-  "github_stars": 23200,
+  "github_stars": 23216,
   "maintenance_status": "active",
   "first_release_year": 2016,
   "requires_server": false,
