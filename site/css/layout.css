@@ -83,6 +83,8 @@
 .filter-sidebar {
   position: sticky;
   top: 1rem;
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
   contain: layout paint;
 }
 
