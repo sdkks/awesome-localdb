@@ -1730,6 +1730,14 @@ function wireNavButtons() {
       }
     });
   }
+
+  const shareBtn = document.getElementById('nav-share');
+  if (shareBtn) {
+    shareBtn.addEventListener('click', () => {
+      updateHash();
+      shareView();
+    });
+  }
 }
 
 // Boot when the DOM is ready
