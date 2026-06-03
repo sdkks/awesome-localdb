@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "name": "sqlite-vec",
+  "slug": "sqlite-vec",
+  "category": "vector",
+  "categories": ["vector"],
+  "description": "sqlite-vec is an extremely small, fast enough vector search SQLite extension that runs anywhere SQLite runs. It stores vectors as compact BLOBs in regular SQLite tables and provides SQL functions for exact KNN search through virtual tables. With bindings for Python, Node.js, Rust, and Go, it brings vector search to edge devices, mobile apps, browser WASM, and server environments without additional infrastructure.",
+  "homepage_url": "https://alexgarcia.xyz/sqlite-vec/",
+  "repository_url": "https://github.com/asg017/sqlite-vec",
+  "license": "MIT",
+  "languages": [
+    {"name": "Python", "ecosystem": "pip"},
+    {"name": "JavaScript", "ecosystem": "npm"},
+    {"name": "Rust", "ecosystem": "cargo"},
+    {"name": "Go", "ecosystem": "gomod"}
+  ],
+  "format_on_disk": "SQLite extension (vectors stored as BLOBs in standard SQLite tables + virtual tables)",
+  "core_strengths": [
+    "Runs anywhere SQLite runs — desktop, mobile, edge, WASM",
+    "Extremely small footprint with zero external dependencies",
+    "Full SQL interface for vector operations (insert, search, filter)",
+    "Supports float32, int8, binary, and sparse vector types",
+    "Exact KNN search with SQL ORDER BY distance LIMIT k",
+    "Hybrid search combining vector similarity with structured WHERE filters"
+  ],
+  "best_use_cases": [
+    "RAG pipelines with local document embeddings",
+    "On-device vector search for mobile and edge applications",
+    "Adding semantic search to existing SQLite-backed applications",
+    "Browser-based vector search via SQLite WASM builds",
+    "Lightweight AI/ML feature storage alongside relational data"
+  ],
+  "tags": ["sql-interface", "embedded-only", "ai-ml", "rag", "persistent", "single-file"],
+  "github_stars": 7700,
+  "maintenance_status": "active",
+  "first_release_year": 2024,
+  "requires_server": false,
+  "remarks": "sqlite-vec currently performs exact (brute-force) KNN search. Approximate nearest neighbor (ANN) support via DiskANN is in development. Requires SQLite 3.41+ for full feature support. On macOS the system Python does not support loadable extensions by default; use Homebrew Python or pysqlite3 as a workaround. Vector index creation and metadata filtering are expressed through standard SQL, not a separate query API."
+}

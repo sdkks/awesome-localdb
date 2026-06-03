@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "name": "ArcadeDB",
+  "slug": "arcadedb",
+  "category": "multi-model",
+  "categories": ["multi-model", "graph", "document", "vector", "key-value", "search", "time-series"],
+  "description": "ArcadeDB is a multi-model database that natively supports graphs, documents, key-value, vectors, full-text search, and time-series in a single engine with ACID transactions. It runs embedded inside Java (JVM) and Python applications via the arcadedb-embedded package, which bundles a Java runtime with the wheel for zero-dependency Python use. The same engine can also run as a distributed server with Raft-based HA replication. ArcadeDB supports SQL, OpenCypher (97.8% TCK pass rate), Gremlin, GraphQL, and MongoDB query language, making it the most versatile embedded multi-model database.",
+  "homepage_url": "https://arcadedb.com",
+  "repository_url": "https://github.com/ArcadeData/arcadedb",
+  "license": "Apache-2.0",
+  "languages": [
+    { "name": "Java", "ecosystem": "maven" },
+    { "name": "Python", "ecosystem": "pip" }
+  ],
+  "format_on_disk": "Multi-file (WAL journal + LSM-Tree indexes + columnar time-series chunks)",
+  "core_strengths": [
+    "Five data models in one engine: graph, document, key-value, vector, time-series",
+    "Embedded Python via pip with bundled JRE, zero external Java setup required",
+    "Native OpenCypher 25 support passing 97.8% of official TCK",
+    "JVector-powered vector search with HNSW+DiskANN hybrid and SIMD acceleration",
+    "ACID transactions with WAL crash recovery and MVCC concurrency control",
+    "Same engine runs embedded, single-node server, or Raft-replicated HA cluster"
+  ],
+  "best_use_cases": [
+    "GraphRAG/AI pipelines combining vector search with graph traversal in one query",
+    "Local-first apps needing document, graph, and vector in one embedded DB",
+    "Jupyter notebooks with persistent multi-model storage across kernel restarts",
+    "Edge/IoT devices processing sensor time-series alongside graph device topologies",
+    "Desktop and CLI tools shipping a full database with zero external dependencies"
+  ],
+  "tags": [
+    "embedded-only",
+    "also-server",
+    "persistent",
+    "multi-file",
+    "sql-interface",
+    "schemaless",
+    "schemaful",
+    "full-text-search",
+    "ai-ml",
+    "rag",
+    "replication",
+    "json-native"
+  ],
+  "custom_tags": [],
+  "github_stars": 900,
+  "maintenance_status": "active",
+  "first_release_year": 2021,
+  "requires_server": false,
+  "remarks": "ArcadeDB is a conceptual fork of OrientDB by the same founder (Luca Garulli) after SAP's acquisition of OrientDB. The arcadedb-embedded Python package bundles a Java 25 JRE (~73 MB wheel). The Python binding uses JPype to bridge into the JVM engine. The arcadedb-python package is the remote client driver for connecting to an ArcadeDB server; arcadedb-embedded is the in-process package. Wheels are available for Python 3.10-3.14 on Linux (x86_64, ARM64), macOS (Apple Silicon), and Windows (x86_64).",
+  "comparisons": []
+}

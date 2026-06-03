@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "name": "ObjectBox",
+  "slug": "objectbox",
+  "category": "vector",
+  "categories": ["vector", "mobile"],
+  "description": "ObjectBox is a high-performance on-device database for objects and vectors, designed for mobile, edge, and IoT applications. It uses FlatBuffers for zero-copy serialization and stores data in a single file with ACID transactions. ObjectBox supports vector similarity search for on-device AI workloads (RAG, semantic search) alongside traditional object persistence with relations, queries, and automatic schema migrations. Available across C/C++, Go, Java/Kotlin, Swift, Dart/Flutter, and Python, it runs fully embedded with no server required and optional Data Sync for multi-device coordination.",
+  "homepage_url": "https://objectbox.io",
+  "repository_url": "https://github.com/objectbox/objectbox-java",
+  "license": "Apache-2.0",
+  "languages": [
+    {"name": "Python", "ecosystem": "pip"},
+    {"name": "Go", "ecosystem": "gomod"}
+  ],
+  "format_on_disk": "FlatBuffers-based (single file)",
+  "core_strengths": [
+    "On-device vector search for local AI, RAG, and semantic similarity",
+    "FlatBuffers-based zero-copy serialization with no parsing overhead",
+    "ACID transactions with automatic schema migrations and no manual scripts",
+    "Embedded-only with no server required, runs in-process on constrained devices",
+    "Multi-platform: Android, iOS, Linux, macOS, Windows, and embedded ARM",
+    "Object persistence with built-in relations, indexes, and type-safe queries"
+  ],
+  "best_use_cases": [
+    "On-device AI with local vector search (RAG, semantic similarity)",
+    "Mobile apps needing fast local object and vector storage (Android, iOS, Flutter)",
+    "Edge/IoT devices with constrained CPU, memory, and power budgets",
+    "Offline-first applications with optional cross-device sync",
+    "Embedded object database replacing SQLite for performance-sensitive workloads"
+  ],
+  "tags": ["iot", "edge", "mobile", "persistent", "embedded-only", "sync", "single-file", "schemaless"],
+  "github_stars": 4600,
+  "maintenance_status": "active",
+  "first_release_year": 2017,
+  "requires_server": false,
+  "remarks": "ObjectBox is a multi-repo project: objectbox/objectbox-java (main), objectbox/objectbox-go, objectbox/objectbox-python, objectbox/objectbox-c, objectbox/objectbox-swift, objectbox/objectbox-dart. The core database engine is written in C/C++ with language-specific bindings. Go and Dart/Flutter require code generation (go generate / build_runner). Python vector search is in alpha as of v4.0.0. ObjectBox Sync (commercial) enables multi-device data synchronization with an optional sync server."
+}

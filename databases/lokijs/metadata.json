@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "name": "LokiJS",
+  "slug": "lokijs",
+  "category": "document",
+  "categories": ["document"],
+  "description": "LokiJS is an in-memory, document-oriented JavaScript database with a MongoDB-like API. It stores collections of plain JavaScript objects, with built-in DynamicView for persistent query result sets, and supports optional persistence adapters for saving data to IndexedDB, WebSQL, localStorage, or a local JSON file. LokiJS runs entirely in-process in Node.js and browsers with zero external dependencies, making it ideal for mobile apps, Electron apps, and single-page applications that need fast local document storage.",
+  "homepage_url": "https://github.com/techfort/LokiJS",
+  "repository_url": "https://github.com/techfort/LokiJS",
+  "license": "MIT",
+  "languages": [
+    {"name": "JavaScript", "ecosystem": "npm"}
+  ],
+  "format_on_disk": "In-Memory with optional persistence via JSON file, IndexedDB, WebSQL, or localStorage adapters",
+  "core_strengths": [
+    "MongoDB-like API for document queries with simple find, insert, update, remove",
+    "DynamicView for persistent live query result sets with sorted indexes",
+    "Zero dependencies with single-file embeddable builds for Node.js and browsers",
+    "Optional persistence adapters (IndexedDB, WebSQL, localStorage, JSON file)",
+    "Built-in indexing with compound indexes for fast document lookups",
+    "Small footprint suitable for mobile apps, Electron apps, and SPAs"
+  ],
+  "best_use_cases": [
+    "Client-side document storage for single-page applications and PWAs",
+    "Embedded database for Electron and Node.js desktop applications",
+    "Mobile app local storage via browser adapters (IndexedDB, WebSQL)",
+    "Prototyping and rapid development with a MongoDB-like query pattern",
+    "Offline-first apps using in-memory storage with periodic persistence saves"
+  ],
+  "tags": ["in-memory", "persistent", "schemaless", "json-native", "embedded-only"],
+  "custom_tags": [],
+  "github_stars": 6800,
+  "maintenance_status": "archived",
+  "first_release_year": 2013,
+  "requires_server": false,
+  "remarks": "Project was abandoned in 2022 and is no longer maintained. The official website redirects to RxDB, which has become the spiritual successor in the local-first JavaScript database space. LokiJS loads the entire database into memory, making it unsuitable for datasets larger than available RAM. SyncProxy for real-time server sync was a planned feature but never reached production readiness. Use RxDB for new projects; LokiJS is included for reference and legacy compatibility.",
+  "comparisons": [
+    "https://dbdb.io/db/lokijs"
+  ]
+}

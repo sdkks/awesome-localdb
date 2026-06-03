@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Awesome Local DB — Embedded Database Catalog</title>
+  <meta name="description" content="A curated catalog of embedded databases — discover, compare, and find code examples for databases that run without a server.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/views.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <a href="#app-root" class="skip-link">Skip to content</a>
+  <header class="app-header">
+    <h1><a href="/">Awesome Local DB</a></h1>
+    <p class="subtitle">Embedded databases you can import, link, and use — no server required.</p>
+    <nav class="app-nav" id="app-nav" aria-label="Main navigation">
+      <button class="nav-btn active-view" id="nav-browse" aria-pressed="true">
+        <span class="nav-icon" aria-hidden="true">&#x1F50D;</span> Browse
+      </button>
+      <button class="nav-btn" id="nav-tree" aria-pressed="false">
+        <span class="nav-icon" aria-hidden="true">&#x1F332;</span> Decision Tree
+      </button>
+      <button class="nav-btn" id="nav-compare" aria-pressed="false" disabled title="Select 2–4 databases to compare">
+        <span class="nav-icon" aria-hidden="true">&#x2696;&#xFE0F;</span> <span class="nav-label">Compare</span>
+      </button>
+      <button class="nav-btn share-btn" id="nav-share" title="Copy link to this view">
+        <span class="nav-icon" aria-hidden="true">&#x1F517;</span> Share
+      </button>
+    </nav>
+  </header>
+  <main id="app-root" tabindex="-1">
+    <p class="loading">Loading catalog&hellip;</p>
+  </main>
+  <footer class="app-footer">
+    <p><a href="https://github.com/sdkks/awesome-localdb">View on GitHub</a></p>
+  </footer>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

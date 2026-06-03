@@ -1,0 +1,16 @@
+[project]
+name = "awesome-localdb-lmdb-python"
+version = "0.1.0"
+description = "Recipe examples for LMDB"
+requires-python = ">=3.9"
+dependencies = [
+    "lmdb",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

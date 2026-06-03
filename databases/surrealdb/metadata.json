@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "SurrealDB",
+  "slug": "surrealdb",
+  "category": "multi-model",
+  "categories": ["multi-model", "graph", "document", "vector"],
+  "description": "SurrealDB is a multi-model database that unifies document, graph, vector, and relational paradigms into a single engine with a custom query language (SurrealQL). It runs embedded in Rust and Python with zero external dependencies via the local engine (surrealdb::engine::local), supports in-memory and persistent storage backends including RocksDB and SurrealKV, and offers full-text search, geospatial queries, and live query subscriptions. The same engine can also run as a distributed server with WebSocket and HTTP connectivity, making it suitable for local-first apps as well as cloud deployments.",
+  "homepage_url": "https://surrealdb.com",
+  "repository_url": "https://github.com/surrealdb/surrealdb",
+  "license": "BSL-1.1",
+  "languages": [
+    { "name": "Rust", "ecosystem": "cargo" },
+    { "name": "Python", "ecosystem": "pip" }
+  ],
+  "format_on_disk": "Multi-file (RocksDB LSM-Tree or SurrealKV SSTables) or in-memory",
+  "core_strengths": [
+    "Multi-model engine unifying document, graph, and vector in one system",
+    "Zero-dependency embedded mode via surrealdb::engine::local in Rust",
+    "Custom SurrealQL language with graph traversal, subqueries, and live queries",
+    "Built-in vector similarity search and full-text search indexing",
+    "Same engine runs embedded, single-node server, or distributed cluster",
+    "WASM and edge-compatible with cloud sync capability"
+  ],
+  "best_use_cases": [
+    "Local-first applications needing document, graph, and vector in one DB",
+    "AI/ML apps combining vector search with graph relationship traversal",
+    "Desktop and edge apps requiring embedded multi-model storage",
+    "Real-time collaborative apps using live query subscriptions",
+    "Prototyping cloud-native apps locally before scaling to distributed deploy"
+  ],
+  "tags": [
+    "embedded-only",
+    "also-server",
+    "persistent",
+    "in-memory",
+    "multi-file",
+    "schemaless",
+    "full-text-search",
+    "ai-ml",
+    "rag",
+    "desktop",
+    "cli",
+    "WASM"
+  ],
+  "custom_tags": [],
+  "github_stars": 32000,
+  "maintenance_status": "active",
+  "first_release_year": 2022,
+  "requires_server": false,
+  "remarks": "SurrealDB v3.x moved from Apache-2.0 to BSL-1.1, converting to Apache-2.0 after the Change Date (2030-01-01). The BSL permits all uses except offering SurrealDB as a Database Service. The Rust crate requires feature flags for storage backends: kv-mem (in-memory), kv-rocksdb (RocksDB), kv-surrealkv (SurrealKV). RocksDB depends on non-Rust libraries. The Python SDK bundles the SurrealDB engine via Rust FFI; embedded mode requires the surrealdb pip package. The SurrealQL language is not standard SQL — it uses a custom syntax with graph traversal operators (->, <-, <->). SurrealDB can also run as a distributed server (surrealdb binary) with WebSocket and HTTP APIs. WASM support is available for browser use.",
+  "comparisons": [
+    "https://surrealdb.com/benchmarks",
+    "https://surrealdb.com/blog/the-power-of-surrealdb-embedded"
+  ]
+}

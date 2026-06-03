@@ -1,0 +1,9 @@
+[package]
+name = "awesome-localdb-libsql-rust"
+version = "0.1.0"
+edition = "2021"
+description = "Recipe examples for libSQL"
+
+[dependencies]
+libsql = "0.6"
+tokio = { version = "1", features = ["full"] }

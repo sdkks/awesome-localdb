@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "name": "LMDB",
+  "slug": "lmdb",
+  "category": "key-value",
+  "categories": ["key-value"],
+  "description": "LMDB (Lightning Memory-Mapped Database) is an ultra-fast, compact, embedded key-value store that uses memory-mapped files with a B+Tree design. It provides fully ACID transactions with MVCC (Multi-Version Concurrency Control), allowing concurrent readers to operate without blocking a single writer. As an embedded database with zero-copy reads, LMDB is ideal for applications requiring minimal overhead, high read performance, and predictable latency. Widely used in OpenLDAP, cryptocurrency nodes, and as a storage backend in distributed systems.",
+  "homepage_url": "https://www.lmdb.tech/doc/",
+  "repository_url": "https://github.com/LMDB/lmdb",
+  "license": "OpenLDAP Public License",
+  "languages": [
+    {"name": "Python", "ecosystem": "pip"},
+    {"name": "Rust", "ecosystem": "cargo"}
+  ],
+  "format_on_disk": "B+Tree memory-mapped (single data file + lock file)",
+  "core_strengths": [
+    "MVCC with concurrent readers that never block a single writer",
+    "Zero-copy reads via memory-mapped files, fully exploiting OS buffer cache",
+    "ACID transactions with full crash recovery via copy-on-write",
+    "Extremely compact — the library is ~40 KB of tightly optimized C",
+    "Deterministic read latency with no background compaction threads"
+  ],
+  "best_use_cases": [
+    "High-concurrency read workloads with occasional writes",
+    "Embedded metadata and configuration storage in long-running processes",
+    "Local caching layers where RocksDB-level tuning is not needed",
+    "Cryptocurrency and blockchain node storage",
+    "Directory services and authentication backends"
+  ],
+  "tags": ["single-file", "persistent", "concurrent-readers", "copy-on-write", "single-writer", "embedded-only"],
+  "custom_tags": [],
+  "github_stars": 2000,
+  "maintenance_status": "active",
+  "first_release_year": 2011,
+  "requires_server": false,
+  "remarks": "LMDB is single-writer — only one write transaction at a time. Writes must fit entirely in memory (the database is mapped to a fixed virtual address range). The default map size on 64-bit is 1 MB; increase it with map_size before writes exceed it. LMDB does not use a write-ahead log; a crash during a write transaction rolls back to the last committed state automatically. Keys are lexicographically ordered by default, so prefix scans are efficient.",
+  "comparisons": [
+    "https://symas.com/lmdb/bench/microbench/",
+    "https://symas.com/lmdb/technical/",
+    "https://mozilla.github.io/firefox-browser-architecture/text/0015-rkv.html"
+  ]
+}

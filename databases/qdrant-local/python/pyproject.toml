@@ -1,0 +1,16 @@
+[project]
+name = "awesome-localdb-qdrant-local-python"
+version = "0.1.0"
+description = "Recipe examples for Qdrant Local Mode"
+requires-python = ">=3.9"
+dependencies = [
+    "qdrant-client",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

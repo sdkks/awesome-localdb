@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "name": "H2",
+  "slug": "h2",
+  "category": "relational",
+  "categories": ["relational"],
+  "description": "H2 is an embeddable Java SQL database engine. It runs in-process as a library with zero external dependencies, supports both disk-based and in-memory databases, and provides a JDBC API for Java applications. It features a browser-based console, encryption, full-text search, multi-version concurrency control, and a tiny footprint of around 2.5 MB. H2 is widely used in the Java ecosystem as an embedded database for development, testing, and lightweight production deployments.",
+  "homepage_url": "https://www.h2database.com",
+  "repository_url": "https://github.com/h2database/h2database",
+  "license": "MPL-2.0 / EPL-1.0",
+  "languages": [
+    { "name": "Java", "ecosystem": "maven" }
+  ],
+  "format_on_disk": "MVStore (single .mv.db file per database)",
+  "core_strengths": [
+    "Embedded in-process operation with zero external dependencies",
+    "Ultra-fast in-memory mode for testing and transient workloads",
+    "Small footprint: around 2.5 MB jar file size",
+    "Full JDBC API with broad SQL standard support",
+    "Browser-based Console application for administration",
+    "Multi-version concurrency control and transaction support"
+  ],
+  "best_use_cases": [
+    "Embedded database inside Java desktop applications",
+    "In-memory database for fast integration testing in CI/CD pipelines",
+    "Development-time stand-in for heavier RDBMS like PostgreSQL or MySQL",
+    "Local storage for Spring Boot microservices running in dev mode",
+    "Lightweight SQL engine for Java-based IoT and edge deployments"
+  ],
+  "tags": [
+    "sql-interface",
+    "in-memory",
+    "persistent",
+    "embedded-only",
+    "single-file"
+  ],
+  "custom_tags": [],
+  "github_stars": 4600,
+  "maintenance_status": "active",
+  "first_release_year": 2005,
+  "requires_server": false,
+  "remarks": "H2 can also run in server mode (TCP) for multi-connection access, though its primary strength is embedded operation. The dual MPL 2.0 / EPL 1.0 license requires modified H2 source code to be published; using unmodified H2 in commercial applications is allowed. The jdbc:h2:mem: URL creates a private in-memory database per connection; for a named in-memory database shared across connections, use jdbc:h2:mem:<name>.",
+  "comparisons": [
+    "https://www.h2database.com/html/features.html#comparison",
+    "https://db-engines.com/en/system/H2"
+  ]
+}

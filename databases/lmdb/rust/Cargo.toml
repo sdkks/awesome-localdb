@@ -1,0 +1,11 @@
+[package]
+name = "awesome-localdb-lmdb-rust"
+version = "0.1.0"
+edition = "2021"
+description = "Recipe examples for LMDB"
+
+[dependencies]
+heed = "0.22"
+tempfile = "3"
+
+[dev-dependencies]

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "name": "PouchDB",
+  "slug": "pouchdb",
+  "category": "document",
+  "categories": ["document"],
+  "description": "PouchDB is an open-source JavaScript database inspired by Apache CouchDB that runs entirely within the browser and Node.js. It enables applications to store data locally as JSON documents while offline, then synchronize bidirectionally with any CouchDB-compatible server when back online. PouchDB uses the browser's built-in IndexedDB for persistent local storage (LevelDB in Node.js), supports MapReduce queries, secondary indexes, and replication with conflict resolution. Its API supports callbacks, promises, and async/await.",
+  "homepage_url": "https://pouchdb.com/",
+  "repository_url": "https://github.com/pouchdb/pouchdb",
+  "license": "Apache-2.0",
+  "languages": [
+    {"name": "JavaScript", "ecosystem": "npm"}
+  ],
+  "format_on_disk": "IndexedDB (browser) / LevelDB (Node.js)",
+  "core_strengths": [
+    "Runs natively in every browser using IndexedDB with zero native dependencies",
+    "Seamless bidirectional sync with Apache CouchDB and compatible servers",
+    "Offline-first design with automatic conflict detection and resolution",
+    "Lightweight — just a script tag or npm install, 46KB gzipped in the browser",
+    "MVCC concurrency control keeps reads consistent during writes",
+    "Full CRUD API for JSON documents with attachments, views, and secondary indexes"
+  ],
+  "best_use_cases": [
+    "Offline-first and progressive web apps (PWAs) needing local data with cloud sync",
+    "Mobile web applications that must work reliably with intermittent connectivity",
+    "Multi-device data synchronization with automatic conflict resolution",
+    "Browser-based tools and dashboards requiring persistent client-side storage",
+    "Node.js apps needing a lightweight embedded document store with replication"
+  ],
+  "tags": ["browser", "offline-first", "replication", "sync", "schemaless", "json-native", "persistent", "in-memory"],
+  "custom_tags": [],
+  "github_stars": 17000,
+  "maintenance_status": "active",
+  "first_release_year": 2013,
+  "requires_server": false,
+  "remarks": "PouchDB uses browser-native IndexedDB for persistent storage, with optional in-memory adapter for testing. Automatic browser↔server sync requires a remote CouchDB or CouchDB-compatible endpoint (CouchDB, Cloudant, Couchbase). The LevelDB adapter in Node.js requires native compilation, though pure-JavaScript alternatives exist. PouchDB is AP from a CAP perspective — it favors availability and partition tolerance over strong consistency. Secondary indexes (via pouchdb-find) must be deliberately configured; ad-hoc queries on large datasets can be slow without them.",
+  "comparisons": [
+    "https://pouchdb.com/guides/",
+    "https://pouchdb.com/faq.html",
+    "https://dbdb.io/db/pouchdb"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "awesome-localdb-acebase-javascript",
+  "version": "0.1.0",
+  "private": true,
+  "type": "commonjs",
+  "description": "Recipe examples for AceBase",
+  "scripts": {
+    "start": "node src/recipe_realtime_store.js",
+    "test": "node --test tests/*.js"
+  },
+  "dependencies": {
+    "acebase": "^1.29.11"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

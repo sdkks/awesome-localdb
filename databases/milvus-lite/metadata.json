@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "name": "Milvus Lite",
+  "slug": "milvus-lite",
+  "category": "vector",
+  "categories": ["vector"],
+  "description": "Milvus Lite is the lightweight embedded version of Milvus, the high-performance vector database. Packaged inside pymilvus and installable via pip, it runs entirely in-process with no external dependencies. Connection is as simple as passing a local .db path to MilvusClient. It provides the full pymilvus API surface — collection CRUD, vector insertion, ANN search with scalar filtering, and metadata queries — so code written for Milvus Lite migrates seamlessly to Milvus Standalone, Milvus Distributed, or Zilliz Cloud.",
+  "homepage_url": "https://milvus.io",
+  "repository_url": "https://github.com/milvus-io/milvus",
+  "license": "Apache-2.0",
+  "languages": [
+    {"name": "Python", "ecosystem": "pip"}
+  ],
+  "format_on_disk": "LSM-style with WAL, immutable Parquet segments, and segment-level FAISS indexes (multi-file per data_dir)",
+  "core_strengths": [
+    "Zero-configuration embedded mode via a local .db path",
+    "Full pymilvus API compatibility for seamless migration to production Milvus",
+    "Segment-level FAISS indexes for fast approximate nearest neighbor search",
+    "Scalar filtering combined with vector search in a single query",
+    "BM25 full-text search alongside dense and sparse vector search",
+    "Optional gRPC server mode for multi-client local development"
+  ],
+  "best_use_cases": [
+    "RAG (Retrieval-Augmented Generation) prototyping and local development",
+    "Jupyter notebook-based AI experimentation with vector search",
+    "Unit and integration testing for pymilvus-based applications",
+    "Small-scale semantic search in local CLI and desktop tools",
+    "Learning the Milvus API without deploying infrastructure"
+  ],
+  "tags": ["ai-ml", "rag", "embedded-only", "also-server", "persistent", "multi-file", "schemaless"],
+  "github_stars": 32000,
+  "maintenance_status": "active",
+  "first_release_year": 2022,
+  "requires_server": false,
+  "remarks": "Milvus Lite is included in pymilvus — install with `pip install pymilvus` (no separate milvus-lite package needed unless using the CLI server). A single data_dir can only be used by one process at a time (file-locked). This is a local development engine; for production workloads use Milvus Standalone, Milvus Distributed, or Zilliz Cloud. No authentication, RBAC, or multi-tenancy support.",
+  "comparisons": [
+    "https://milvus.io/docs/milvus_lite.md"
+  ]
+}

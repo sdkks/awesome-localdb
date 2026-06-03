@@ -1,0 +1,17 @@
+{
+  "name": "awesome-localdb-lokijs-javascript",
+  "version": "0.1.0",
+  "private": true,
+  "type": "commonjs",
+  "description": "Recipe examples for LokiJS",
+  "scripts": {
+    "start": "node src/recipe_document_store.js",
+    "test": "node --test tests/*.js"
+  },
+  "dependencies": {
+    "lokijs": "^1.5.12"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,10 @@
+[package]
+name = "awesome-localdb-rocksdb-rust"
+version = "0.1.0"
+edition = "2021"
+description = "Recipe examples for RocksDB"
+
+[dependencies]
+rocksdb = "0.23"
+
+[dev-dependencies]

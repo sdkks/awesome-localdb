@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "name": "SQLite",
+  "slug": "sqlite",
+  "category": "relational",
+  "categories": ["relational"],
+  "description": "SQLite is a self-contained, serverless, zero-configuration SQL database engine. It is the most widely deployed database in the world, embedded in every mobile OS, every browser, and countless applications. SQLite is ACID-compliant, uses a single-file B-Tree format, and supports most of SQL-92.",
+  "homepage_url": "https://sqlite.org",
+  "repository_url": "https://github.com/sqlite/sqlite",
+  "license": "Public Domain",
+  "languages": [
+    {"name": "Python", "ecosystem": "pip"},
+    {"name": "Rust", "ecosystem": "cargo"}
+  ],
+  "format_on_disk": "B-Tree Pages (Single File)",
+  "core_strengths": [
+    "ACID compliant",
+    "Zero-configuration, serverless",
+    "Universally supported across all platforms and languages",
+    "Battle-tested — spacecraft-grade reliability",
+    "Single-file database, easy to copy and backup",
+    "Full SQL support with extensions (FTS5, JSON, Geo)"
+  ],
+  "best_use_cases": [
+    "Transactional local storage for applications",
+    "Mobile apps (iOS/Android built-in)",
+    "Local data for CLI tools and MCP servers",
+    "Offline-first web apps (via OPFS)",
+    "Embedded systems and IoT devices"
+  ],
+  "tags": ["single-file", "sql-interface", "schemaful", "persistent", "in-memory", "embedded-only", "mobile", "desktop", "cli", "row-based"],
+  "custom_tags": [],
+  "github_stars": 9700,
+  "maintenance_status": "active",
+  "first_release_year": 2000,
+  "requires_server": false,
+  "remarks": "SQLite uses a single-writer model by default. Enable Write-Ahead Logging (WAL) mode for concurrent reads during writes. Heavy write queues may need additional tuning (auto-vacuum, page size). Not suited for high-concurrency write workloads."
+}

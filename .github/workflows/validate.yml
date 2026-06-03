@@ -1,0 +1,49 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'databases/**/metadata.json'
+      - 'schemas/*.schema.json'
+      - 'scripts/**'
+      - '.github/workflows/validate.yml'
+  pull_request:
+    paths:
+      - 'databases/**/metadata.json'
+      - 'schemas/*.schema.json'
+      - 'scripts/**'
+      - '.github/workflows/validate.yml'
+
+jobs:
+  validate-metadata:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install jsonschema
+        run: pip install jsonschema
+
+      - name: Validate metadata files
+        run: python3 scripts/validate-metadata.py
+
+  validate-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run build script
+        run: bash scripts/build-index.sh
+
+      - name: Check index is up to date
+        run: |
+          if ! git diff --exit-code site/index.json site/filter-options.json; then
+            echo "Error: site/index.json or site/filter-options.json is out of date."
+            echo "Run 'bash scripts/build-index.sh' locally and commit the result."
+            exit 1
+          fi

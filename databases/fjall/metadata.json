@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "name": "fjall",
+  "slug": "fjall",
+  "category": "key-value",
+  "categories": ["key-value"],
+  "description": "Fjall is a log-structured, embeddable key-value storage engine written in 100% safe Rust. It uses an LSM-tree-based storage model similar to RocksDB, providing a thread-safe BTreeMap-like API. Fjall supports multiple keyspaces (analogous to column families) with cross-keyspace atomic semantics, range and prefix searching with forward and reverse iteration, optional serializable transactions, built-in compression (LZ4 by default), and automatic background maintenance. It is designed as an embeddable library, not a standalone database server, and has no notion of columns or query language.",
+  "homepage_url": "https://fjall-rs.github.io",
+  "repository_url": "https://github.com/fjall-rs/fjall",
+  "license": "Apache-2.0",
+  "languages": [
+    {"name": "Rust", "ecosystem": "cargo"}
+  ],
+  "format_on_disk": "LSM-Tree (SST files + WAL journal)",
+  "core_strengths": [
+    "100% safe Rust with no unsafe blocks, easy to audit and trust",
+    "LSM-tree storage with automatic background compaction and maintenance",
+    "Multiple keyspaces (column families) with cross-keyspace atomic semantics",
+    "Thread-safe BTreeMap-like API with range and prefix iteration",
+    "Built-in LZ4 compression with configurable compression levels",
+    "Optional serializable transactions via optimistic or single-writer concurrency"
+  ],
+  "best_use_cases": [
+    "Rust applications needing an embedded LSM-based key-value store",
+    "Local metadata and configuration storage in Rust CLI tools and daemons",
+    "Edge and IoT deployments where pure Rust cross-compilation is essential",
+    "Applications requiring ordered key iteration with range and prefix scans",
+    "Workloads benefiting from LSM-tree write amplification characteristics"
+  ],
+  "tags": ["persistent", "embedded-only", "compression", "multi-file", "append-only", "concurrent-readers"],
+  "custom_tags": [],
+  "github_stars": 2100,
+  "maintenance_status": "active",
+  "first_release_year": 2024,
+  "requires_server": false,
+  "remarks": "Fjall is an embedded library only -- there is no network server, replication protocol, or clustering support. Keys are limited to 65536 bytes and values to 2^32 bytes. The LSM-tree write path is optimized for write-heavy workloads, but read amplification can occur for point lookups on large datasets without proper tuning. As with any LSM-tree, performance is sensitive to compaction strategy configuration. The database format is stable across patch versions; breaking format changes will result in a major version bump with a migration path.",
+  "comparisons": [
+    "https://fjall-rs.github.io/post/fjall-3/"
+  ]
+}

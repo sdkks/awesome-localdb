@@ -1,0 +1,17 @@
+[project]
+name = "awesome-localdb-lancedb-python"
+version = "0.1.0"
+description = "Recipe examples for LanceDB"
+requires-python = ">=3.9"
+dependencies = [
+    "lancedb",
+    "numpy",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

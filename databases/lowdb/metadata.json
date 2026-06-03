@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "name": "LowDB",
+  "slug": "lowdb",
+  "category": "document",
+  "categories": ["document"],
+  "description": "LowDB is a tiny, type-safe local JSON database for Node.js and the browser. It stores data as a single JSON file and exposes it as a plain JavaScript object with no query language to learn -- if you know JavaScript, you know how to use LowDB. Data is written atomically via JSON.stringify. Designed for small projects, prototyping, and configuration storage where a full database is overkill.",
+  "homepage_url": "https://github.com/typicode/lowdb",
+  "repository_url": "https://github.com/typicode/lowdb",
+  "license": "MIT",
+  "languages": [
+    {"name": "JavaScript", "ecosystem": "npm"}
+  ],
+  "format_on_disk": "Plain Text JSON File (Single File)",
+  "core_strengths": [
+    "Zero query language -- uses plain JavaScript to read and write data",
+    "Single JSON file with atomic writes for data safety",
+    "TypeScript-first with full type inference on your data shape",
+    "Extremely lightweight with no dependencies beyond the Node standard library",
+    "Extensible via adapters for custom storage, serialization, and encryption",
+    "Works in Node.js, browser (localStorage/sessionStorage), and in-memory"
+  ],
+  "best_use_cases": [
+    "Configuration and settings storage for CLI tools and small servers",
+    "Prototyping and rapid iteration without schema migrations",
+    "Single-user desktop and local applications with simple data needs",
+    "Browser localStorage wrapper with a clean API for small web apps",
+    "Mock database in unit tests with zero setup"
+  ],
+  "tags": ["single-file", "schemaless", "json-native", "embedded-only", "cli", "desktop", "browser"],
+  "custom_tags": [],
+  "github_stars": 22500,
+  "maintenance_status": "active",
+  "first_release_year": 2014,
+  "requires_server": false,
+  "remarks": "Loads the entire JSON file into memory. Not suitable for large datasets (10-100MB+). No indexing or query engine -- all filtering is done via Array methods in user code. Does not support concurrent access from multiple processes (Node cluster). Pure ESM package; may require configuration in CommonJS projects."
+}

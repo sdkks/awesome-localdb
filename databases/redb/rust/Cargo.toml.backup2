@@ -1,0 +1,11 @@
+[package]
+name = "awesome-localdb-redb-rust"
+version = "0.1.0"
+edition = "2021"
+description = "Recipe examples for redb"
+
+[dependencies]
+redb = "4"
+tempfile = "3"
+
+[dev-dependencies]

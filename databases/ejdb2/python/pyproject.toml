@@ -1,0 +1,19 @@
+[project]
+name = "awesome-localdb-ejdb2-python"
+version = "0.1.0"
+description = "Recipe examples for EJDB2"
+requires-python = ">=3.9"
+dependencies = [
+    # EJDB2 is a C library built from source:
+    #   git clone https://github.com/Softmotions/ejdb && cd ejdb && ./build.sh --prefix=$HOME/.local
+    # Python recipes use ctypes (stdlib) to interface with libejdb2.
+    "cffi>=1.16",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

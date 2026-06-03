@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "name": "LevelDB",
+  "slug": "leveldb",
+  "category": "key-value",
+  "categories": ["key-value"],
+  "description": "LevelDB is a fast, lightweight key-value storage library written at Google that provides an ordered mapping from string keys to string values. It uses a Log-Structured Merge-Tree (LSM-Tree) design for high write throughput and efficient range scans, storing data in a compact set of SSTable files with a write-ahead log for crash safety. Designed as a foundational building block rather than a full database, LevelDB is embedded directly into applications and has inspired numerous derivatives including RocksDB and HyperLevelDB.",
+  "homepage_url": "https://github.com/google/leveldb",
+  "repository_url": "https://github.com/google/leveldb",
+  "license": "BSD-3-Clause",
+  "languages": [
+    {"name": "Python", "ecosystem": "pip"}
+  ],
+  "format_on_disk": "LSM-Tree (SSTable files + WAL)",
+  "core_strengths": [
+    "Lightweight binary with small memory footprint ideal for embedded use",
+    "Simple LSM-tree design with predictable write and read performance",
+    "Ordered key space enables efficient range scans and prefix iteration",
+    "Snappy compression reduces disk usage with minimal CPU overhead",
+    "Battle-tested foundation for Chrome, Bigtable, and many derivative stores"
+  ],
+  "best_use_cases": [
+    "Local persistent key-value storage in desktop and mobile applications",
+    "Storage engine foundation for building custom databases",
+    "Metadata and index storage where simplicity matters over features",
+    "Learning LSM-tree internals through a clean reference implementation",
+    "Embedded storage in CLI tools and lightweight daemons"
+  ],
+  "tags": ["multi-file", "persistent", "compression", "embedded-only", "single-writer", "concurrent-readers"],
+  "custom_tags": [],
+  "github_stars": 37000,
+  "maintenance_status": "slow",
+  "first_release_year": 2011,
+  "requires_server": false,
+  "remarks": "LevelDB is single-writer by design -- a single process may open a database at a time (or multiple processes using the same filesystem lock). It lacks built-in replication, sharding, transactions, or SQL. The C++ API is minimal by design; most users interact through language bindings. Development has slowed as Google considers LevelDB feature-complete and stable. RocksDB, a fork by Meta, adds column families, multi-threaded compaction, and many tunable parameters for those needing more features.",
+  "comparisons": [
+    "https://github.com/google/leveldb/blob/main/doc/benchmark.md",
+    "https://github.com/facebook/rocksdb/wiki/Features-Not-in-LevelDB"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "name": "redb",
+  "slug": "redb",
+  "category": "key-value",
+  "categories": ["key-value"],
+  "description": "redb is a simple, portable, high-performance, ACID-compliant embedded key-value store written in pure Rust. It uses a collection of copy-on-write B-trees for storage, providing MVCC support that allows a writer and concurrent readers to operate without blocking each other. The entire database is stored in a single file, making it easy to manage and deploy. redb is thread-safe by default and exposes a type-safe API via TableDefinition and MultimapTableDefinition, supporting arbitrary Rust types as keys and values. It is loosely inspired by LMDB but implemented entirely in Rust with no C dependencies, making it easy to cross-compile and embed in any Rust project.",
+  "homepage_url": "https://www.redb.org",
+  "repository_url": "https://github.com/cberner/redb",
+  "license": "Apache-2.0 OR MIT",
+  "languages": [
+    {"name": "Rust", "ecosystem": "cargo"}
+  ],
+  "format_on_disk": "Copy-on-Write B-Tree (single file)",
+  "core_strengths": [
+    "Pure Rust implementation with zero C dependencies, easy to cross-compile",
+    "MVCC with concurrent readers and writer via copy-on-write B-trees",
+    "Fully ACID-compliant transactions with crash safety by default",
+    "Type-safe typed table API supporting arbitrary Rust key and value types",
+    "Single-file storage format, simple to deploy and back up",
+    "Savepoints and rollbacks for fine-grained transaction control"
+  ],
+  "best_use_cases": [
+    "Rust desktop applications needing an embedded durable store",
+    "Configuration and metadata storage in Rust CLI tools and daemons",
+    "Local caching layers with ACID guarantees in Rust services",
+    "Edge and IoT applications where pure Rust cross-compilation matters",
+    "Replacements for LMDB in pure-Rust codebases"
+  ],
+  "tags": ["single-file", "persistent", "embedded-only", "copy-on-write", "concurrent-readers", "single-writer"],
+  "custom_tags": [],
+  "github_stars": 3500,
+  "maintenance_status": "active",
+  "first_release_year": 2021,
+  "requires_server": false,
+  "remarks": "redb uses a single-writer model: only one write transaction at a time. Concurrent readers are non-blocking thanks to MVCC, but a long-running read transaction will prevent the database file from shrinking during compaction. The database file size grows monotonically and requires manual compaction (via Database::compact()) to reclaim space — there is no automatic background compaction. Keys in standard tables are stored in lexicographic byte order. The maximum key size is limited by the B-tree page size (default 4 KB). redb is embedded-only with no built-in network server or replication protocol.",
+  "comparisons": [
+    "https://github.com/cberner/redb#benchmarks"
+  ]
+}

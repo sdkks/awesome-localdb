@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "name": "Sanakirja",
+  "slug": "sanakirja",
+  "category": "key-value",
+  "categories": ["key-value"],
+  "description": "Sanakirja is a transactional, on-disk key-value store backed by copy-on-write B-trees, written in pure Rust. Originally developed as the storage engine for the Pijul version control system, it provides concurrent readers and writers (writers exclude each other) through a multi-version architecture where readers see a consistent snapshot without blocking. It supports dynamically-sized keys and values, compile-time-known sized types for zero-copy operations, and is split into a #[no_std] core crate and a higher-level crate with memory-mapped file support. Sanakirja is production-proven: it has powered every Pijul repository since 2016, handles graph-shaped data natively through reference-counted page sharing (enabling cheap table forks), and benchmarks 20-50% faster than LMDB for its primary workload of storing version control graphs.",
+  "homepage_url": "https://pijul.org",
+  "repository_url": "https://nest.pijul.com/pijul/sanakirja",
+  "license": "Apache-2.0",
+  "languages": [
+    {"name": "Rust", "ecosystem": "cargo"}
+  ],
+  "format_on_disk": "Copy-on-Write B-Tree (4096-byte pages, multi-version root pages, single file)",
+  "core_strengths": [
+    "Copy-on-write B-trees with concurrent readers that never block on writers",
+    "Benchmarked 20-50% faster than LMDB for graph-storage workloads (u64 key-value)",
+    "Reference-counted page sharing enables near-zero-cost table forks",
+    "#[no_std] core crate with generic allocator — usable beyond filesystems",
+    "Production-proven as the storage engine for Pijul VCS since 2016",
+    "Statically-typed keys and values with zero-copy reads for sized types"
+  ],
+  "best_use_cases": [
+    "Version control systems and CRDT-backed applications needing cheap forks",
+    "Rust applications requiring an LMDB-class embedded key-value store",
+    "Graph-structured persistent data where reference-counted pages reduce copies",
+    "Systems programming where #[no_std] compatibility and custom allocators matter",
+    "High-throughput write workloads benefiting from compaction-free CoW design"
+  ],
+  "tags": ["copy-on-write", "persistent", "embedded-only", "concurrent-readers", "single-writer"],
+  "custom_tags": [],
+  "github_stars": 200,
+  "maintenance_status": "active",
+  "first_release_year": 2016,
+  "requires_server": false,
+  "remarks": "Sanakirja uses a multi-version concurrency model: the number of concurrent versions is fixed at database creation. A writer copies the youngest committed version's root page over the oldest version's root page, so long-running readers on the oldest version will block writers. The API is lower-level than typical Rust KV stores — users manage root pointers manually via set_root/root_db and must be careful about pointer lifetimes. Keys and values must implement the Storable or UnsizedStorable trait. The on-disk format is stable across minor versions. The repository is hosted on nest.pijul.com (the Pijul VCS platform), not GitHub.",
+  "comparisons": [
+    "https://pijul.org/posts/2021-02-06-rethinking-sanakirja/#benchmarks",
+    "https://dbdb.io/db/sanakirja"
+  ]
+}

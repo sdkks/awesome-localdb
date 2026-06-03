@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "name": "Limbo",
+  "slug": "limbo",
+  "category": "relational",
+  "categories": ["relational"],
+  "description": "Limbo is an in-progress complete rewrite of SQLite in Rust by the Turso team. Designed for memory safety and modern architectures, it targets full compatibility with SQLite's SQL dialect and file format while adding ground-up support for fully asynchronous I/O (io_uring on Linux) and a WASM-first build target for browser and edge environments. Limbo integrates Deterministic Simulation Testing (DST) into its core and partners with Antithesis for system-level deterministic testing. The project is MIT-licensed, community-friendly, and intended to eventually become the next evolution of libSQL. Currently in beta and not yet production-ready.",
+  "homepage_url": "https://turso.tech/blog/introducing-limbo-a-complete-rewrite-of-sqlite-in-rust",
+  "repository_url": "https://github.com/tursodatabase/turso",
+  "license": "Apache-2.0",
+  "languages": [
+    {"name": "Rust", "ecosystem": "cargo"}
+  ],
+  "format_on_disk": "SQLite-compatible B-Tree Pages (Single File)",
+  "core_strengths": [
+    "Memory-safe SQLite rewrite in Rust with full SQL dialect compatibility",
+    "Fully asynchronous I/O from the ground up with io_uring support on Linux",
+    "WASM-first design for native browser, edge, and serverless environments",
+    "Deterministic Simulation Testing (DST) integrated into the core for reliability",
+    "Performance on par or faster than SQLite for common query operations",
+    "Open-contribution development model under the Turso umbrella"
+  ],
+  "best_use_cases": [
+    "Rust applications needing a memory-safe embedded SQL database",
+    "Browser and edge computing with WASM-compiled SQL",
+    "Applications requiring fully asynchronous SQL operations without helper threads",
+    "Desktop and mobile apps needing a SQLite-compatible embedded database in Rust",
+    "Developers who want SQLite compatibility with modern async and WASM features"
+  ],
+  "tags": ["sql-interface", "WASM", "embedded-only", "schemaful", "persistent", "single-file", "row-based"],
+  "custom_tags": [],
+  "github_stars": 19000,
+  "maintenance_status": "beta",
+  "first_release_year": 2024,
+  "requires_server": false,
+  "remarks": "Limbo is in beta and not yet production-ready. The API and on-disk format may change without backward compatibility guarantees. Not all SQLite features are implemented yet -- refer to the project's SQLite compatibility tracking for current coverage. Browser support via WASM is in active development. The project ships as a library under the `limbo` crate on crates.io, but the repository (tursodatabase/turso) also contains other Turso components. The Limbo crate is published as version 0.0.x indicating pre-release status.",
+  "comparisons": [
+    "https://turso.tech/blog/introducing-limbo-a-complete-rewrite-of-sqlite-in-rust"
+  ]
+}

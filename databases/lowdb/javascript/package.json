@@ -1,0 +1,17 @@
+{
+  "name": "awesome-localdb-lowdb-javascript",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Recipe examples for LowDB",
+  "scripts": {
+    "start": "node src/recipe_json_store.js",
+    "test": "node --test tests/*.js"
+  },
+  "dependencies": {
+    "lowdb": "^7.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

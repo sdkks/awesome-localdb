@@ -1,0 +1,11 @@
+[package]
+name = "awesome-localdb-sanakirja-rust"
+version = "0.1.0"
+edition = "2021"
+description = "Recipe examples for Sanakirja"
+
+[dependencies]
+sanakirja = "1.4"
+tempfile = "3"
+
+[dev-dependencies]

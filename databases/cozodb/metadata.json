@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "name": "CozoDB",
+  "slug": "cozodb",
+  "category": "graph",
+  "categories": ["graph", "relational"],
+  "description": "CozoDB is a general-purpose, transactional, relational-graph-vector database that uses Datalog (CozoScript) as its query language. It supports time-travel queries, graph algorithms (shortest path, PageRank, community detection), and vector search natively within the Datalog engine. CozoDB runs embedded in Rust and Python with zero external dependencies via SQLite or RocksDB storage backends, yet can also operate as a standalone server. The Datalog-based query model enables recursive queries, deductive reasoning, and rule-based data transformations that are cumbersome in SQL.",
+  "homepage_url": "https://www.cozodb.org",
+  "repository_url": "https://github.com/cozodb/cozo",
+  "license": "MPL-2.0",
+  "languages": [
+    { "name": "Python", "ecosystem": "pip" },
+    { "name": "Rust", "ecosystem": "cargo" }
+  ],
+  "format_on_disk": "SQLite-backed (single-file) or RocksDB LSMT (multi-file); also in-memory",
+  "core_strengths": [
+    "Datalog (CozoScript) query language with recursive rules and deductive reasoning",
+    "Built-in graph algorithms: shortest path, PageRank, community detection",
+    "Time-travel queries: query historical snapshots of data at any point in time",
+    "Embedded mode with zero dependencies via SQLite or RocksDB storage backends",
+    "Vector similarity search natively integrated into the Datalog engine",
+    "Multi-statement transactions with Python interop for complex workflows"
+  ],
+  "best_use_cases": [
+    "Graph analytics with Datalog-based recursive queries and built-in algorithms",
+    "Temporal data applications requiring time-travel and historical querying",
+    "Knowledge graphs with deductive reasoning and rule-based inference",
+    "AI/ML pipelines combining vector search with graph relationship traversal",
+    "Audit and compliance systems needing immutable, time-travel-capable data storage"
+  ],
+  "tags": ["embedded-only", "also-server", "persistent", "in-memory", "single-file", "time-travel"],
+  "custom_tags": [],
+  "github_stars": 4000,
+  "maintenance_status": "active",
+  "first_release_year": 2022,
+  "requires_server": false,
+  "remarks": "CozoDB uses MPL-2.0, a weak copyleft license requiring changes to the CozoDB source itself to be shared, but allowing proprietary applications to embed it without licensing their own code. The Python client (pycozo) bundles the CozoDB engine via pycozo[embedded] using the cozo-embedded Rust library. Datalog syntax differs significantly from SQL — users must learn CozoScript's rule-based query model. Vector and graph features are available in the embedded engine but may have different feature coverage compared to the standalone server. The Rust crate is cozo; the Python package is pycozo.",
+  "comparisons": [
+    "https://www.cozodb.org/benchmarks.html"
+  ]
+}

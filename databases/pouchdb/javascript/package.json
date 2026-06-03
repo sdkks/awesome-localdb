@@ -1,0 +1,18 @@
+{
+  "name": "awesome-localdb-pouchdb-javascript",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Recipe examples for PouchDB",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/recipe_offline_storage.js",
+    "test": "node --test tests/*.js"
+  },
+  "dependencies": {
+    "pouchdb": "^9.0.0",
+    "pouchdb-adapter-memory": "^9.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,12 @@
+[package]
+name = "awesome-localdb-polodb-rust"
+version = "0.1.0"
+edition = "2021"
+description = "Recipe examples for PoloDB"
+
+[dependencies]
+polodb_core = "5.1"
+serde = { version = "1", features = ["derive"] }
+tempfile = "3"
+
+[dev-dependencies]

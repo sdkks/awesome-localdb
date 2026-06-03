@@ -1,0 +1,11 @@
+[package]
+name = "awesome-localdb-sled-rust"
+version = "0.1.0"
+edition = "2021"
+description = "Recipe examples for sled"
+
+[dependencies]
+sled = "0.34"
+tempfile = "3"
+
+[dev-dependencies]

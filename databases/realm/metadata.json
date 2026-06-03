@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "name": "Realm",
+  "slug": "realm",
+  "category": "mobile",
+  "categories": ["mobile", "document"],
+  "description": "Realm is an offline-first mobile object database that runs directly inside phones, tablets, wearables, and desktop apps. It stores typed objects with automatic indexing and provides real-time reactive queries that auto-update when data changes. Supporting Swift, Kotlin, Java, JavaScript/TypeScript, C#, and .NET, Realm offers zero-copy reads, ACID transactions, and schema migration with minimal boilerplate. It includes an optional device sync service for multi-device data coordination, making it a complete replacement for SQLite and Core Data in mobile applications.",
+  "homepage_url": "https://realm.io",
+  "repository_url": "https://github.com/realm/realm-swift",
+  "license": "Apache-2.0",
+  "languages": [
+    {"name": "JavaScript", "ecosystem": "npm"}
+  ],
+  "format_on_disk": "B+ Tree memory-mapped files (single-file per Realm, optional encryption)",
+  "core_strengths": [
+    "Real-time reactive queries with live objects that auto-update on data changes",
+    "Zero-copy reads via memory-mapped storage — no deserialization overhead",
+    "ACID transactions with schema migration support and low boilerplate",
+    "Offline-first design: all data lives locally, sync is optional and additive",
+    "Cross-platform: iOS, Android, .NET, JavaScript/RN, with a unified data model",
+    "Single-file storage with built-in encryption, compaction, and notifications"
+  ],
+  "best_use_cases": [
+    "Mobile apps needing offline-first local persistence with seamless UI updates",
+    "React Native apps requiring native-speed object storage with live queries",
+    "Cross-platform apps sharing a unified data layer across iOS, Android, and .NET",
+    "Replacing SQLite and Core Data with a simpler object-based mobile API",
+    "Apps that need optional cloud sync without rearchitecting the local data layer"
+  ],
+  "tags": ["mobile", "offline-first", "reactive", "sync", "persistent", "single-file", "encryption", "schemaful"],
+  "github_stars": 16600,
+  "maintenance_status": "slow",
+  "first_release_year": 2014,
+  "requires_server": false,
+  "remarks": "Realm is a multi-repo project: realm/realm-swift (iOS/macOS), realm/realm-kotlin (Android), realm/realm-js (JavaScript/TypeScript/React Native), realm/realm-dotnet (.NET). MongoDB acquired Realm in 2019 and announced deprecation of the Atlas Device Sync + Realm SDKs in September 2024. The core database remains open-source (Apache-2.0) and continues to function for local-only use cases, but official maintenance has slowed. The npm package (realm@20.x) requires native module compilation and works with Node.js >= 18 and React Native. Realm objects are live — modifying a queried object automatically updates all references without re-fetching."
+}

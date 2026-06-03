@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "name": "EJDB2",
+  "slug": "ejdb2",
+  "category": "document",
+  "categories": ["document"],
+  "description": "EJDB2 is an embeddable JSON database engine written in C, published under the MIT license. It stores BSON documents in a single file backed by the IOWOW key/value storage engine. It features a powerful XPath-inspired query language (JQL) with support for collection joins, projections, sorting, and data modification. EJDB2 also includes an optional HTTP/WebSocket REST endpoint for network-accessible deployments. Language bindings exist for C, Go, Node.js, and Python.",
+  "homepage_url": "https://github.com/Softmotions/ejdb",
+  "repository_url": "https://github.com/Softmotions/ejdb",
+  "license": "MIT",
+  "languages": [
+    {"name": "C", "ecosystem": "conan"},
+    {"name": "Go", "ecosystem": "gomod"},
+    {"name": "JavaScript", "ecosystem": "npm"},
+    {"name": "Python", "ecosystem": "pip"}
+  ],
+  "format_on_disk": "Single file (IOWOW key/value storage engine with BSON documents)",
+  "core_strengths": [
+    "XPath-inspired JQL query language with joins, projections, and sorting",
+    "Single-file embedded database with zero configuration required",
+    "Online backups support without stopping the database",
+    "Optional HTTP/WebSocket REST endpoint for network access",
+    "ACID-compliant with indexes on JSON fields for fast queries",
+    "Compact C11 implementation suitable for IoT and edge devices"
+  ],
+  "best_use_cases": [
+    "Embedded JSON storage for desktop and CLI applications",
+    "IoT and edge device data persistence with minimal footprint",
+    "Mobile app local storage via Swift/Kotlin bindings",
+    "Lightweight document store for microservices and prototypes",
+    "Applications needing JSON-native querying with join capabilities"
+  ],
+  "tags": ["json-native", "persistent", "iot", "edge", "embedded-only"],
+  "custom_tags": [],
+  "github_stars": 1500,
+  "maintenance_status": "active",
+  "first_release_year": 2019,
+  "requires_server": false,
+  "remarks": "The C library must be compiled from source. Python bindings are community-maintained via ctypes/CFFI (no official pip package). Node.js bindings require native compilation. The JQL query language uses a custom syntax distinct from SQL or MongoDB — there is a learning curve. Concurrent write access is serialized through a file lock."
+}

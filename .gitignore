@@ -1,0 +1,43 @@
+# Screenshots and test artifacts
+*.png
+*.yml
+!**/.github/workflows/*.yml
+
+# Dependencies
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.eggs/
+*.egg
+.pytest_cache/
+
+# Rust
+target/
+
+# Go
+*.exe
+*.test
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Claude
+.claude/
+
+# Build artifacts
+site/index.json
+site/filter-options.json
+
+# Seed data (used for initial import only)
+seed.csv

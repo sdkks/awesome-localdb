@@ -1,0 +1,40 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:4008946543815553422",
+      "lastPropertyId": "3:2683045624018826083",
+      "name": "Document",
+      "properties": [
+        {
+          "id": "1:5103350790757329386",
+          "name": "Id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:1795757088449978332",
+          "name": "Text",
+          "type": 9
+        },
+        {
+          "id": "3:2683045624018826083",
+          "name": "Embedding",
+          "type": 23
+        }
+      ]
+    }
+  ],
+  "lastEntityId": "1:4008946543815553422",
+  "lastIndexId": "",
+  "lastRelationId": "",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "retiredRelationUids": [],
+  "version": 1
+}

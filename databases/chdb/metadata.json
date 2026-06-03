@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "name": "chDB",
+  "slug": "chdb",
+  "category": "olap",
+  "categories": ["olap"],
+  "description": "chDB is an in-process SQL OLAP engine powered by ClickHouse. It embeds the full ClickHouse query engine directly into Python, enabling fast analytical queries on Parquet, CSV, JSON, Arrow, and 70+ other formats without a server. With zero external dependencies, minimized data copies via Python memoryview, and a pandas-compatible DataStore API supporting 630+ methods, chDB delivers up to 20x speedup over pandas for grouped aggregations and complex pipelines.",
+  "homepage_url": "https://clickhouse.com/docs/chdb",
+  "repository_url": "https://github.com/chdb-io/chdb",
+  "license": "Apache-2.0",
+  "languages": [
+    { "name": "Python", "ecosystem": "pip" }
+  ],
+  "format_on_disk": "ClickHouse MergeTree columnar format (persistent or in-memory)",
+  "core_strengths": [
+    "Full ClickHouse SQL engine embedded in-process with zero external dependencies",
+    "Direct querying of Parquet, CSV, JSON, Arrow, ORC and 70+ formats",
+    "pandas-compatible DataStore API with 630+ methods and SQL optimization",
+    "Minimized data copies from C++ to Python via memoryview",
+    "Columnar vectorized execution for fast OLAP aggregations and joins",
+    "Up to 20x faster than pandas on common grouped aggregation operations"
+  ],
+  "best_use_cases": [
+    "Accelerating pandas workflows with a drop-in DataStore API replacement",
+    "In-process analytical queries on local Parquet/CSV/Arrow files",
+    "Embedded OLAP inside data science notebooks and Python scripts",
+    "Data pipeline transformations with SQL and 70+ I/O formats",
+    "Ad-hoc analysis on datasets too large for pandas but not needing a server"
+  ],
+  "tags": [
+    "sql-interface",
+    "columnar",
+    "data-pipeline",
+    "embedded-only"
+  ],
+  "custom_tags": [],
+  "github_stars": 22000,
+  "maintenance_status": "active",
+  "first_release_year": 2023,
+  "requires_server": false,
+  "remarks": "chDB is Python-only for the bundled bindings; Go, Rust, Node.js, Bun, and C/C++ bindings are available separately. The DataStore API provides a pandas-compatible interface but not all pandas methods are supported. Performance is best on analytical (OLAP) workloads, not transactional (OLTP) patterns.",
+  "comparisons": [
+    "https://benchmark.clickhouse.com/",
+    "https://clickhouse.com/blog/chdb-embedded-clickhouse-rocket-engine-on-a-bicycle"
+  ]
+}

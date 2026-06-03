@@ -1,0 +1,14 @@
+[package]
+name = "awesome-localdb-native-db-rust"
+version = "0.1.0"
+edition = "2021"
+description = "Recipe examples for Native DB"
+
+[dependencies]
+native_db = "0.8"
+native_model = "0.4"
+once_cell = "1"
+serde = { version = "1", features = ["derive"] }
+tempfile = "3"
+
+[dev-dependencies]

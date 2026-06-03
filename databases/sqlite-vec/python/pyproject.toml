@@ -1,0 +1,16 @@
+[project]
+name = "awesome-localdb-sqlite-vec-python"
+version = "0.1.0"
+description = "Recipe examples for sqlite-vec"
+requires-python = ">=3.9"
+dependencies = [
+    "sqlite-vec",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

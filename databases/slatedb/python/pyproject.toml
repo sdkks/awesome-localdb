@@ -1,0 +1,18 @@
+[project]
+name = "awesome-localdb-slatedb-python"
+version = "0.1.0"
+description = "Recipe examples for SlateDB"
+requires-python = ">=3.10"
+dependencies = [
+    "slatedb",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.24",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"

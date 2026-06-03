@@ -1,0 +1,18 @@
+{
+  "name": "awesome-localdb-realm-javascript",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Recipe examples for Realm local database",
+  "main": "src/recipe_mobile_store.js",
+  "scripts": {
+    "start": "node src/recipe_mobile_store.js",
+    "test": "node --test \"tests/*.js\""
+  },
+  "dependencies": {
+    "realm": "^20.2.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

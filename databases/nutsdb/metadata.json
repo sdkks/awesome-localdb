@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "name": "NutsDB",
+  "slug": "nutsdb",
+  "category": "key-value",
+  "categories": ["key-value"],
+  "description": "NutsDB is a simple, fast, embeddable, persistent key/value store written in pure Go. It supports fully serializable transactions and Redis-like data structures including lists, sets, and sorted sets. Inspired by the Bitcask model, NutsDB uses an append-only log for writes with in-memory index structures for fast lookups, providing TTL support and efficient range scans. All operations happen inside transactions, making it suitable for embedded use in Go applications without external dependencies.",
+  "homepage_url": "https://github.com/nutsdb/nutsdb",
+  "repository_url": "https://github.com/nutsdb/nutsdb",
+  "license": "Apache-2.0",
+  "languages": [
+    {"name": "Go", "ecosystem": "gomod"}
+  ],
+  "format_on_disk": "Bitcask-inspired append-only log with multiple data files and in-memory indexes",
+  "core_strengths": [
+    "Pure Go implementation with zero external dependencies",
+    "Redis-like data structures: list, set, sorted set natively",
+    "Fully serializable ACID transactions with read-only and read-write modes",
+    "TTL support with automatic expiration of keys",
+    "Merge V2 compaction and HintFile for fast startup and reduced memory",
+    "Watch key changes for real-time data monitoring"
+  ],
+  "best_use_cases": [
+    "Go applications needing embedded persistent storage with data structures",
+    "Local caching with TTL and automatic key expiration",
+    "Lightweight Redis replacement for single-process Go applications",
+    "Metadata and configuration storage in Go microservices",
+    "Applications needing ordered sets and lists without an external database"
+  ],
+  "tags": ["persistent", "embedded-only", "multi-file", "append-only"],
+  "custom_tags": [],
+  "github_stars": 4000,
+  "maintenance_status": "active",
+  "first_release_year": 2019,
+  "requires_server": false,
+  "remarks": "NutsDB uses a Bitcask-inspired storage model (append-only log + in-memory index), not an LSM-tree. Data is stored across multiple log files on disk. Buckets must be created explicitly before use and are tied to a data structure type (BTree, List, Set, SortedSet). Starting from v1.0.0, the underlying data storage protocol changed and old-version data is not compatible. Requires Go 1.18+.",
+  "comparisons": [
+    "https://github.com/nutsdb/nutsdb/blob/master/docs/user_guides/comparison.md"
+  ]
+}

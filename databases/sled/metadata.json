@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "name": "Sled",
+  "slug": "sled",
+  "category": "key-value",
+  "categories": ["key-value"],
+  "description": "Sled is a high-performance embedded key-value database written in Rust with an API similar to a threadsafe BTreeMap. It uses a lock-free Bw-Tree index and log-structured storage optimized for SSDs, providing fully serializable ACID transactions across multiple keyspaces. Sled supports atomic single-key operations including compare-and-swap and update-and-fetch, zero-copy reads, write batches, subscription/watch semantics on key prefixes, merge operators, and a crash-safe monotonic ID generator capable of 75-125 million IDs per second. The main branch contains an in-progress v1 rewrite with a new storage engine; the latest published release (0.34) uses the pre-rewrite architecture.",
+  "homepage_url": "https://sled.rs",
+  "repository_url": "https://github.com/spacejam/sled",
+  "license": "Apache-2.0",
+  "languages": [
+    {"name": "Rust", "ecosystem": "cargo"}
+  ],
+  "format_on_disk": "Log-structured Bw-Tree (multi-file with pagecache and sequential WAL segments)",
+  "core_strengths": [
+    "Lock-free Bw-Tree and log-structured storage for SSD-optimized concurrent access",
+    "API similar to a threadsafe BTreeMap with serializable ACID transactions",
+    "Fully atomic single-key operations: compare-and-swap, update-and-fetch, merge",
+    "Prefix-encoded and suffix-truncated keys for reduced storage overhead",
+    "Crash-safe monotonic ID generator producing 75-125 million unique IDs per second",
+    "Subscription/watch semantics and reactive iteration over key prefix changes"
+  ],
+  "best_use_cases": [
+    "Rust applications needing an embedded transactional key-value store",
+    "Building larger stateful systems using sled as a lock-free storage component",
+    "Workloads requiring high-concurrency reads and writes without locks",
+    "SSD-optimized local persistence for servers, desktops, and phones",
+    "Persistent configuration and metadata storage in Rust CLI tools and services"
+  ],
+  "tags": ["persistent", "embedded-only", "concurrent-readers", "compression", "append-only", "multi-file"],
+  "custom_tags": [],
+  "github_stars": 9000,
+  "maintenance_status": "slow",
+  "first_release_year": 2016,
+  "requires_server": false,
+  "remarks": "The main branch contains an in-progress v1 rewrite with a new storage engine and API (version 1.0.0-alpha.124). The latest published release is 0.34.7, which uses the pre-rewrite architecture. The on-disk format is not stable across alpha versions and may change without migration paths. The README on the main branch is out of sync with the code. For production use, stick with published crates.io releases (0.34.x) and expect the v1 API to differ significantly. Sled is dual-licensed under Apache-2.0 OR MIT.",
+  "comparisons": [
+    "https://dbdb.io/db/sled"
+  ]
+}

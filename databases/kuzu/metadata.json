@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "name": "Kuzu",
+  "slug": "kuzu",
+  "category": "graph",
+  "categories": ["graph"],
+  "description": "Kuzu is an embedded property graph database built for speed and scalability. It implements the openCypher query language on a columnar storage engine, making it well-suited for analytical graph workloads on large datasets. Kuzu supports vector search and full-text search natively, runs in-process with zero external dependencies, and provides client APIs for C++, Python, Rust, JavaScript, and Java.",
+  "homepage_url": "https://kuzudb.com",
+  "repository_url": "https://github.com/kuzudb/kuzu",
+  "license": "MIT",
+  "languages": [
+    {"name": "C++", "ecosystem": "conan"},
+    {"name": "Python", "ecosystem": "pip"},
+    {"name": "Rust", "ecosystem": "cargo"},
+    {"name": "JavaScript", "ecosystem": "npm"},
+    {"name": "Java", "ecosystem": "maven"}
+  ],
+  "format_on_disk": "Columnar Storage (multi-file: node/rel groups, WAL, catalog)",
+  "core_strengths": [
+    "openCypher query language for expressive graph pattern matching",
+    "Columnar storage engine optimized for analytical graph queries",
+    "Built-in vector similarity search with HNSW index",
+    "Built-in full-text search indexing",
+    "Zero-configuration embedded deployment with no external daemon",
+    "Cross-language client APIs (C++, Python, Rust, JS, Java)"
+  ],
+  "best_use_cases": [
+    "Analytical graph queries over large property graph datasets",
+    "Graph-based recommendation and ranking (PageRank, community detection)",
+    "Fraud detection with complex relationship pattern matching",
+    "Knowledge graph traversal with Cypher path queries",
+    "Hybrid search combining graph patterns with vector similarity"
+  ],
+  "tags": ["persistent", "embedded-only", "multi-file", "columnar", "full-text-search", "ai-ml", "single-writer", "concurrent-readers"],
+  "github_stars": 3900,
+  "maintenance_status": "active",
+  "first_release_year": 2022,
+  "requires_server": false,
+  "remarks": "Kuzu is designed for analytical graph workloads (read-heavy) rather than high-throughput transactional graph updates. The columnar storage format uses multiple files on disk by default, not a single file. Writes are serialized through a single-writer model; concurrent read access is supported. The primary implementation is C++; language clients wrap the C API."
+}

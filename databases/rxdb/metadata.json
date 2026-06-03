@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "name": "RxDB",
+  "slug": "rxdb",
+  "category": "document",
+  "categories": ["document"],
+  "description": "RxDB is a local-first, reactive NoSQL database for JavaScript applications. It stores JSON documents locally with schema validation and provides real-time reactive queries via RxJS observables. RxDB runs in browsers, Node.js, Electron, and React Native with pluggable storage backends (Dexie.js, IndexedDB, SQLite, and more). It supports offline-first replication with multiple protocols (HTTP, GraphQL, WebRTC, CouchDB, WebSocket, Firestore, NATS) and includes encryption, multi-tab support, and CRDT-based conflict resolution.",
+  "homepage_url": "https://rxdb.info/",
+  "repository_url": "https://github.com/pubkey/rxdb",
+  "license": "Apache-2.0",
+  "languages": [
+    {"name": "JavaScript", "ecosystem": "npm"}
+  ],
+  "format_on_disk": "Pluggable: Dexie.js (default) / IndexedDB / SQLite / LocalStorage / Memory",
+  "core_strengths": [
+    "Reactive queries via RxJS observables — UI automatically updates on data changes",
+    "JSON Schema-based validation with migration strategies for schema evolution",
+    "Pluggable storage: Dexie.js, IndexedDB, SQLite, LocalStorage, in-memory",
+    "Multi-protocol replication: HTTP, GraphQL, WebRTC, CouchDB, WebSocket, NATS",
+    "Offline-first with automatic sync, conflict detection, and CRDT-based resolution",
+    "Multi-tab support with cross-tab observables via BroadcastChannel",
+    "Encryption plugin for field-level document encryption at rest",
+    "Runs anywhere JavaScript runs — browsers, Node.js, Electron, React Native"
+  ],
+  "best_use_cases": [
+    "Offline-first and progressive web apps (PWAs) needing local data with cloud sync",
+    "Reactive UIs where data changes must propagate instantly to all components",
+    "Multi-device applications with peer-to-peer sync via WebRTC",
+    "Electron/React Native apps needing local-first data with optional server sync",
+    "Applications needing encrypted client-side storage with schema validation"
+  ],
+  "tags": ["browser", "offline-first", "reactive", "replication", "sync", "schemaful", "json-native", "persistent", "encryption", "mobile", "desktop", "p2p"],
+  "custom_tags": [],
+  "github_stars": 23200,
+  "maintenance_status": "active",
+  "first_release_year": 2016,
+  "requires_server": false,
+  "remarks": "RxDB is schemaful by design — all collections require a JSON Schema definition, and the dev-mode plugin enforces validation. Storage is pluggable: Dexie.js (default, works everywhere), IndexedDB, SQLite (premium), LocalStorage, in-memory, and FoundationDB among others. The storage layer is abstracted behind the RxStorage interface so you can swap backends without changing application code. Replication plugins (HTTP, GraphQL, CouchDB, WebRTC, etc.) are opt-in and must be imported separately. Some premium features (SQLite storage, Query Builder plugin, Vector Search) require a paid license.",
+  "comparisons": [
+    "https://rxdb.info/comparison.html",
+    "https://rxdb.info/why-rxdb.html",
+    "https://rxdb.info/comparison-pouchdb.html"
+  ]
+}

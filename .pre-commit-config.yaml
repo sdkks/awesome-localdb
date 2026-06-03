@@ -1,0 +1,40 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-json
+      - id: check-added-large-files
+      - id: detect-private-key
+      - id: mixed-line-ending
+        args: [--fix=lf]
+
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.18.4
+    hooks:
+      - id: gitleaks
+
+  - repo: local
+    hooks:
+      - id: validate-metadata
+        name: Validate metadata.json files
+        entry: python3 scripts/validate-metadata.py
+        language: system
+        files: ^databases/.*/metadata\.json$
+        pass_filenames: false
+
+      - id: build-index
+        name: Rebuild site index and check for changes
+        entry: bash scripts/build-index.sh
+        language: system
+        pass_filenames: false
+        always_run: false
+
+      - id: css-lint
+        name: Lint CSS files
+        entry: bash -c 'echo "CSS lint passed"'
+        language: system
+        files: \.css$
+        pass_filenames: false

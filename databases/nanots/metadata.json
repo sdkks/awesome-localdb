@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "name": "NanoTS",
+  "slug": "nanots",
+  "category": "time-series",
+  "categories": ["time-series"],
+  "description": "NanoTS is a lightweight, high-performance embedded time-series database optimized for real-time streaming applications like video, finance, and IoT sensor data. It uses memory-mapped storage with lock-free data structures for lightning-fast writes (8.83us on SSD) and sub-microsecond reads. Supports pre-allocated or growable storage, multiple independent streams in a single file, bidirectional iteration with timestamp seeking, and crash recovery with frame-level atomicity. Like SQLite, it runs in-process with no server required.",
+  "homepage_url": "https://nanots.io",
+  "repository_url": "https://github.com/dicroce/nanots",
+  "license": "Apache-2.0",
+  "languages": [
+    { "name": "Python", "ecosystem": "pip" },
+    { "name": "Go", "ecosystem": "gomod" },
+    { "name": "Rust", "ecosystem": "cargo" },
+    { "name": "C++", "ecosystem": "conan" }
+  ],
+  "format_on_disk": "Memory-Mapped Binary Blocks (single .nts file + SQLite metadata)",
+  "core_strengths": [
+    "113,000+ writes/second sustained on SSD with lock-free storage",
+    "Memory-mapped architecture enables sub-microsecond reads",
+    "Pre-allocated storage eliminates disk-full surprises and fragmentation",
+    "Multiple independent streams in a single file with separate write contexts",
+    "Configurable block sizes for durability/performance trade-offs",
+    "Auto-reclaim mode recycles oldest blocks when space runs out",
+    "Composite (timestamp, secondary_key) ordering for non-unique timestamps",
+    "Crash recovery with frame-level atomicity guarantees"
+  ],
+  "best_use_cases": [
+    "Video surveillance: capture dozens of camera streams concurrently",
+    "IoT sensor data: high-frequency readings with time-based queries",
+    "Financial tick data: microsecond-precision trade storage and replay",
+    "Embedded robotics: lidar, IMU, GPS streams with time-aligned scrubbing",
+    "Scientific data acquisition: multi-channel time-series at line rate"
+  ],
+  "tags": ["persistent", "single-file", "iot", "edge", "embedded-only", "concurrent-readers", "single-writer"],
+  "custom_tags": [],
+  "github_stars": 100,
+  "maintenance_status": "active",
+  "first_release_year": 2025,
+  "requires_server": false,
+  "remarks": "NanoTS uses a hybrid architecture combining SQLite for stream metadata with memory-mapped binary block files for frame data. Each stream supports exactly one writer, but unlimited concurrent readers. Frames are write-once (immutable after writing). The current on-disk format is v2, which is not backwards-compatible with v1 — migrate by re-writing data into a freshly-allocated v2 file. Pre-allocated mode is recommended for embedded/fixed-budget deployments; growable mode is available for general workloads.",
+  "comparisons": [
+    "https://github.com/dicroce/nanots_bench/blob/main/RESULTS.md"
+  ]
+}

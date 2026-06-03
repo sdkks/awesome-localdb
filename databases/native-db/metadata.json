@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "name": "Native DB",
+  "slug": "native-db",
+  "category": "document",
+  "categories": ["document"],
+  "description": "Native DB is a drop-in, fast, embedded database for multi-platform Rust apps (server, desktop, mobile). It maintains coherence between Rust types and stored data with minimal boilerplate, using the native_model crate for transparent serialization/deserialization with any serde-compatible format. Native DB supports multiple indexes (primary, secondary, unique, non-unique, optional), ACID transactions via redb, automatic model migration, real-time watch subscriptions with filters, and hot snapshots. Designed for Rust developers who want type-safe persistence without defining schemas separately from their data types.",
+  "homepage_url": "https://docs.rs/native_db",
+  "repository_url": "https://github.com/vincent-herlemont/native_db",
+  "license": "MIT",
+  "languages": [
+    {"name": "Rust", "ecosystem": "cargo"}
+  ],
+  "format_on_disk": "redb (B-tree pages, single-file database)",
+  "core_strengths": [
+    "Zero-schema: Rust structs define the schema, no DDL or ORM mapping needed",
+    "Type-safe queries via generics prevent key-type-to-model mismatches",
+    "Automatic model migration via versioned types and From trait conversion",
+    "Multiple indexes: primary, secondary, unique, non-unique, and optional",
+    "ACID transactions via redb with read-write and read-only modes",
+    "Real-time watch subscriptions with filters for insert, update, delete",
+    "Hot snapshots for backup without stopping the database"
+  ],
+  "best_use_cases": [
+    "Rust desktop apps (Tauri, egui, iced) needing typed local persistence",
+    "iOS and Android Rust apps needing embedded database cross-platform",
+    "CLI tools storing structured config and state with automatic migration",
+    "Embedded systems and IoT devices needing type-coherent local storage",
+    "Single-user apps where Rust types define the entire data model"
+  ],
+  "tags": ["persistent", "embedded-only", "mobile", "desktop", "schemaful", "single-file", "single-writer", "concurrent-readers"],
+  "custom_tags": [],
+  "github_stars": 700,
+  "maintenance_status": "active",
+  "first_release_year": 2023,
+  "requires_server": false,
+  "remarks": "Native DB uses a single-writer, multiple-reader concurrency model backed by redb. It does not support SQL or a query language — all data access is through typed Rust API calls. Schema evolution relies on the native_model crate's versioning and the From trait for migrations. The database is a single file managed by redb. The API is still evolving and may have breaking changes between minor versions. Not suitable for multi-process access; only one writer at a time.",
+  "comparisons": [
+    "https://github.com/vincent-herlemont/native_db/blob/main/benches/README.md"
+  ]
+}

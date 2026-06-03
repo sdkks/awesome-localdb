@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "name": "SlateDB",
+  "slug": "slatedb",
+  "category": "key-value",
+  "categories": ["key-value"],
+  "description": "SlateDB is a cloud-native embedded key-value storage engine built on object storage (S3, MinIO, local filesystem). It implements an LSM-tree architecture that writes data directly to object storage, eliminating the need for local disks while providing 99.999999999% durability. SlateDB supports a single-writer, multi-reader deployment model with a formally verified manifest fencing protocol. It provides transactional semantics with snapshots and optimistic concurrency control, zero-copy clones and branches, and tunable write durability vs. latency trade-offs. The Rust core library ships with official UniFFI-based bindings for Python, Go, Java, and Node.js.",
+  "homepage_url": "https://slatedb.io",
+  "repository_url": "https://github.com/slatedb/slatedb",
+  "license": "Apache-2.0",
+  "languages": [
+    {"name": "Rust", "ecosystem": "cargo"},
+    {"name": "Python", "ecosystem": "pip"}
+  ],
+  "format_on_disk": "LSM-Tree (SST files + WAL written to object storage)",
+  "core_strengths": [
+    "Zero-disk architecture: persists directly to S3/MinIO/local object storage",
+    "LSM-tree engine with formally verified manifest fencing protocol",
+    "Single-writer, multi-reader deployment with OCC transactions and snapshots",
+    "Zero-copy clones and branches for O(1) database forking",
+    "Tunable write durability vs. latency for cost-sensitive workloads",
+    "Official bindings for Python, Go, Java, and Node.js via UniFFI"
+  ],
+  "best_use_cases": [
+    "Cloud-native services that need embedded KV storage without local disks",
+    "Stream processors, caches, and feature stores built on object storage",
+    "Databases and workflow engines using object storage as the persistence layer",
+    "Serverless and containerized workloads where local disk is ephemeral",
+    "Multi-reader analytics over object-storage-backed datasets"
+  ],
+  "tags": ["cloud-native", "blob-storage", "persistent", "embedded-only", "single-writer", "concurrent-readers"],
+  "custom_tags": [],
+  "github_stars": 3100,
+  "maintenance_status": "active",
+  "first_release_year": 2024,
+  "requires_server": false,
+  "remarks": "SlateDB writes directly to object storage; a local disk cache is used only to accelerate reads. Write durability guarantees depend on the object store's consistency model — S3 and MinIO provide strong consistency, but in-memory stores are best-effort. The single-writer constraint means only one process may write at a time; the manifest fencing protocol prevents split-brain but does not support concurrent writes. Compaction can run embedded or as a separate process. The Python package (pip install slatedb) is a UniFFI binding around the Rust core, requiring Python 3.10+. The project joined the Commonhaus Foundation in 2025.",
+  "comparisons": []
+}

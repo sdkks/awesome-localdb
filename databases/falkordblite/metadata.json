@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "name": "FalkorDBLite",
+  "slug": "falkordblite",
+  "category": "graph",
+  "categories": ["graph"],
+  "description": "FalkorDBLite is an embedded, zero-configuration graph database for Python. It bundles a self-contained Redis server with the FalkorDB graph module, providing Cypher query support entirely in-process. No external server or daemon required -- just pip install and start building graph applications with property graphs, pattern matching, and relationship traversal. Based on redislite from Yahoo, it also exposes Redis key-value operations alongside graph capabilities.",
+  "homepage_url": "https://docs.falkordb.com/operations/falkordblite/falkordblite-py.html",
+  "repository_url": "https://github.com/FalkorDB/falkordblite",
+  "license": "BSD-3-Clause",
+  "languages": [
+    {"name": "Python", "ecosystem": "pip"}
+  ],
+  "format_on_disk": "Redis RDB (Single File + Sub-Process Server)",
+  "core_strengths": [
+    "Cypher query language for expressive graph pattern matching",
+    "Zero-configuration embedded deployment with no external daemon",
+    "Self-contained Redis server with FalkorDB module auto-managed",
+    "Persistent graph storage between sessions",
+    "Supports multiple independent graphs in a single database"
+  ],
+  "best_use_cases": [
+    "Local development and testing of Cypher graph applications",
+    "Graph-based AI memory and knowledge graphs",
+    "Agentic AI workflows requiring local graph storage",
+    "Quick prototyping of property graph data models",
+    "Embedded graph database in Python applications"
+  ],
+  "tags": ["embedded-only", "persistent", "single-file"],
+  "custom_tags": ["cypher", "sub-process"],
+  "github_stars": 100,
+  "maintenance_status": "active",
+  "first_release_year": 2025,
+  "requires_server": false,
+  "remarks": "FalkorDBLite spawns a Redis server as a sub-process managed by the Python bindings. It requires Python 3.12+. On macOS, the OpenMP runtime (libomp) must be installed via Homebrew. The API is imported from redislite.falkordb_client rather than a top-level falkordblite package. It is a fork of Yahoo's redislite with FalkorDB graph module added."
+}

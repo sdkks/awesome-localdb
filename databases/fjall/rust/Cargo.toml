@@ -1,0 +1,11 @@
+[package]
+name = "awesome-localdb-fjall-rust"
+version = "0.1.0"
+edition = "2021"
+description = "Recipe examples for fjall"
+
+[dependencies]
+fjall = "3"
+tempfile = "3"
+
+[dev-dependencies]

@@ -1,0 +1,152 @@
+{
+  "version": 1,
+  "title": "Find Your Database",
+  "description": "Answer a few questions and we'll narrow down the best embedded database for your project.",
+  "steps": [
+    {
+      "id": "sql",
+      "question": "Do you need a SQL interface?",
+      "help": "SQL is the standard language for querying relational databases. SQL databases support JOINs, aggregations, and structured schemas — great for applications with well-defined data models and reporting needs.",
+      "choices": [
+        {
+          "text": "Yes, I need SQL",
+          "icon": "sqli",
+          "filters": { "category": ["relational", "olap"] }
+        },
+        {
+          "text": "No, I'm flexible",
+          "icon": "flex",
+          "filters": {}
+        }
+      ]
+    },
+    {
+      "id": "workload",
+      "question": "What's your primary workload?",
+      "help": "Different databases are optimized for different access patterns. Reads-heavy analytical workloads benefit from columnar storage, while writes-heavy OLTP workloads need fast inserts. Vector search is specialized for AI embeddings.",
+      "choices": [
+        {
+          "text": "Reads-heavy / Analytics",
+          "icon": "reads",
+          "filters": { "category": ["olap", "search", "time-series"] }
+        },
+        {
+          "text": "Writes-heavy / Transactions",
+          "icon": "writes",
+          "filters": { "category": ["key-value", "document", "relational"] }
+        },
+        {
+          "text": "Mixed (OLTP)",
+          "icon": "mixed",
+          "filters": {}
+        },
+        {
+          "text": "Vector search / AI",
+          "icon": "vector",
+          "filters": { "category": ["vector"] }
+        }
+      ]
+    },
+    {
+      "id": "deployment",
+      "question": "What's your deployment target?",
+      "help": "Where will your application run? Some databases are optimized for specific environments — desktop tools, mobile apps, browser-based apps (WASM), or edge/server deployments.",
+      "choices": [
+        {
+          "text": "Desktop / CLI tool",
+          "icon": "desktop",
+          "filters": { "tags": ["desktop", "cli"] }
+        },
+        {
+          "text": "Mobile app",
+          "icon": "mobile",
+          "filters": { "tags": ["mobile"] }
+        },
+        {
+          "text": "Browser / WASM",
+          "icon": "browser",
+          "filters": { "tags": ["browser", "WASM"] }
+        },
+        {
+          "text": "Server / Edge",
+          "icon": "server",
+          "filters": { "tags": ["edge", "also-server"] }
+        },
+        {
+          "text": "Any target / No preference",
+          "icon": "any",
+          "filters": {}
+        }
+      ]
+    },
+    {
+      "id": "language",
+      "question": "What's your preferred language ecosystem?",
+      "help": "Choose the programming language your project uses. We'll filter to databases with native bindings or clients for that language.",
+      "choices": [
+        {
+          "text": "Python",
+          "icon": "py",
+          "filters": { "language": ["Python"] }
+        },
+        {
+          "text": "Rust",
+          "icon": "rs",
+          "filters": { "language": ["Rust"] }
+        },
+        {
+          "text": "Go",
+          "icon": "go",
+          "filters": { "language": ["Go"] }
+        },
+        {
+          "text": "JavaScript / TypeScript",
+          "icon": "js",
+          "filters": { "language": ["JavaScript", "TypeScript"] }
+        },
+        {
+          "text": "Java / JVM",
+          "icon": "java",
+          "filters": { "language": ["Java"] }
+        },
+        {
+          "text": "C / C++",
+          "icon": "cpp",
+          "filters": { "language": ["C", "C++"] }
+        },
+        {
+          "text": "C# / .NET",
+          "icon": "cs",
+          "filters": { "language": ["C#"] }
+        }
+      ]
+    },
+    {
+      "id": "requirements",
+      "question": "Any special requirements?",
+      "help": "Some databases offer specialized features. These are additive filters — select only what matters to your project. You can also skip this step.",
+      "choices": [
+        {
+          "text": "ACID transactions",
+          "icon": "acid",
+          "filters": { "tags": ["persistent", "schemaful"] }
+        },
+        {
+          "text": "Offline-first / Sync",
+          "icon": "offline",
+          "filters": { "tags": ["offline-first", "sync"] }
+        },
+        {
+          "text": "AI / Embeddings / RAG",
+          "icon": "ai",
+          "filters": { "tags": ["ai-ml", "rag"] }
+        },
+        {
+          "text": "Full-text search",
+          "icon": "search",
+          "filters": { "tags": ["full-text-search"] }
+        }
+      ]
+    }
+  ]
+}

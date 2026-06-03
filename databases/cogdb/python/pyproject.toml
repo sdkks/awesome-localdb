@@ -1,0 +1,16 @@
+[project]
+name = "awesome-localdb-cogdb-python"
+version = "0.1.0"
+description = "Recipe examples for CogDB"
+requires-python = ">=3.8"
+dependencies = [
+    "cogdb>=0.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

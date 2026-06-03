@@ -1,0 +1,17 @@
+[project]
+name = "awesome-localdb-falkordblite-python"
+version = "0.1.0"
+description = "Recipe examples for FalkorDBLite"
+requires-python = ">=3.12"
+dependencies = [
+    "falkordblite>=0.1.0",
+    "redis>=7.1.0,<8",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

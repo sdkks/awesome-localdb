@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "name": "AceBase",
+  "slug": "acebase",
+  "category": "document",
+  "categories": ["document"],
+  "description": "AceBase is a fast, low-memory, transaction-capable NoSQL document database for Node.js and the browser with realtime data change notifications. Inspired by the Firebase Realtime Database API, it stores JSON-serializable data (objects, arrays, strings, numbers, booleans, dates, bigints, and binary) in a binary storage engine with support for regular, fulltext, geo, and array indexes. AceBase runs entirely embedded without a server process, supports realtime subscriptions with child_added/child_changed/child_removed/value/mutated events, live data proxies for in-memory reactive objects, transactions, schemas for data validation, and optional SQLite/MSSQL backends. A separate acebase-server package is available for client-server deployments with built-in auth and WebSocket sync.",
+  "homepage_url": "https://github.com/appy-one/acebase",
+  "repository_url": "https://github.com/appy-one/acebase",
+  "license": "MIT",
+  "languages": [
+    {"name": "JavaScript", "ecosystem": "npm"}
+  ],
+  "format_on_disk": "Binary storage engine with JSON serialization; optional IndexedDB adapter for browsers and SQLite/MSSQL backends",
+  "core_strengths": [
+    "Firebase-compatible API with realtime subscriptions for child and value events",
+    "Built-in regular, fulltext, geo, and array indexes for fast path queries",
+    "Live data proxies for reactive in-memory objects that auto-sync with the DB",
+    "Transactional updates with atomic get-and-set to prevent race conditions",
+    "Pluggable storage: binary engine, IndexedDB (browser), SQLite, MSSQL, or custom",
+    "Schema validation for enforcing data rules with built-in or custom validators",
+    "Multi-process capable with IPC support and client-server synchronization"
+  ],
+  "best_use_cases": [
+    "Real-time web applications and dashboards needing live data subscriptions",
+    "Firebase replacement in local-first or offline-first JavaScript applications",
+    "Electron and desktop apps requiring embedded NoSQL storage with reactive data",
+    "Single-page applications using the browser IndexedDB adapter for local storage",
+    "Rapid prototyping with a Firebase-like API without external service dependencies",
+    "Multi-device synchronization via acebase-server with WebSocket-based sync"
+  ],
+  "tags": ["reactive", "offline-first", "json-native", "embedded-only", "persistent", "schemaless", "schemaful", "browser", "desktop"],
+  "custom_tags": ["firebase-compatible"],
+  "github_stars": 500,
+  "maintenance_status": "active",
+  "first_release_year": 2018,
+  "requires_server": false,
+  "remarks": "The core acebase package is embedded-only and stores data in a local binary file (or optionally IndexedDB in browsers). A separate acebase-server package provides an HTTP/WebSocket server with built-in authentication and OAuth support for remote multi-client access via acebase-client. AceBase can also use SQLite or MSSQL as storage backends through the acebase-core package. The data storage engine internally uses a B+tree-like structure with transaction logging for crash recovery.",
+  "comparisons": []
+}

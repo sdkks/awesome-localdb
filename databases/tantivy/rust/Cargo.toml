@@ -1,0 +1,8 @@
+[package]
+name = "awesome-localdb-tantivy-rust"
+version = "0.1.0"
+edition = "2021"
+description = "Recipe examples for Tantivy"
+
+[dependencies]
+tantivy = "0.22"

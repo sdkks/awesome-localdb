@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "name": "RocksDB",
+  "slug": "rocksdb",
+  "category": "key-value",
+  "categories": ["key-value"],
+  "description": "RocksDB is a high-performance embedded key-value store forked from Google's LevelDB and developed by Meta. Optimized for fast, low-latency storage on flash and persistent memory, it uses a Log-Structured Merge-Tree (LSM-Tree) design to deliver exceptional write throughput and efficient range scans. RocksDB is the storage engine behind MySQL (MyRocks), MongoDB (MongoRocks), Apache Flink, and countless distributed systems, offering fine-grained tuning of compaction, compression, bloom filters, and column families for workload-specific performance.",
+  "homepage_url": "https://rocksdb.org",
+  "repository_url": "https://github.com/facebook/rocksdb",
+  "license": "Apache-2.0",
+  "languages": [
+    {"name": "Python", "ecosystem": "pip"},
+    {"name": "Rust", "ecosystem": "cargo"}
+  ],
+  "format_on_disk": "LSM-Tree (SST files + WAL)",
+  "core_strengths": [
+    "High write throughput via LSM-tree with leveled/universal compaction",
+    "Low-latency reads with bloom filters and block cache",
+    "Highly tunable — dozens of knobs for compaction, compression, and memory",
+    "Column families enable logical partitioning within a single database",
+    "Battle-tested at scale across hundreds of Meta services"
+  ],
+  "best_use_cases": [
+    "Storage engine for databases and distributed systems",
+    "High-throughput data ingestion pipelines",
+    "Persistent message queues and event stores",
+    "Local metadata and state storage in streaming processors",
+    "Real-time analytics on time-series append data"
+  ],
+  "tags": ["multi-file", "persistent", "concurrent-readers", "compression", "embedded-only", "data-pipeline", "single-writer"],
+  "custom_tags": [],
+  "github_stars": 29900,
+  "maintenance_status": "active",
+  "first_release_year": 2013,
+  "requires_server": false,
+  "remarks": "RocksDB is single-writer by default — a single thread performs all writes to the WAL and memtable for consistency. Use TransactionDB for concurrent write transactions. Performance tuning requires deep understanding of LSM-tree internals. Defaults are optimized for SSD; spinning disk workloads need significant tuning.",
+  "comparisons": [
+    "https://github.com/facebook/rocksdb/wiki/Performance-Benchmarks",
+    "https://github.com/facebook/rocksdb/wiki/Features-Not-in-LevelDB"
+  ]
+}

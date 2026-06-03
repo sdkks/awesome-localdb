@@ -1,0 +1,16 @@
+[project]
+name = "awesome-localdb-libsql-python"
+version = "0.1.0"
+description = "Recipe examples for libSQL"
+requires-python = ">=3.9"
+dependencies = [
+    "libsql-experimental>=0.0.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

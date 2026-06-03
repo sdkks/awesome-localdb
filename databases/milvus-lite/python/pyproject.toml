@@ -1,0 +1,16 @@
+[project]
+name = "awesome-localdb-milvus-lite-python"
+version = "0.1.0"
+description = "Recipe examples for Milvus Lite"
+requires-python = ">=3.9"
+dependencies = [
+    "pymilvus[milvus_lite]",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

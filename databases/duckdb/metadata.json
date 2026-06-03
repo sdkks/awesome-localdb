@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "name": "DuckDB",
+  "slug": "duckdb",
+  "category": "olap",
+  "categories": ["olap"],
+  "description": "DuckDB is an in-process SQL OLAP database management system designed for analytical workloads. Often called the SQLite for analytics, it runs embedded within the host process with zero external dependencies, supports a rich SQL dialect with window functions and correlated subqueries, and can query Parquet, CSV, and JSON files directly without import. Its vectorized columnar execution engine delivers fast aggregation and joins on datasets that fit in memory or on a single machine.",
+  "homepage_url": "https://duckdb.org",
+  "repository_url": "https://github.com/duckdb/duckdb",
+  "license": "MIT",
+  "languages": [
+    { "name": "Python", "ecosystem": "pip" },
+    { "name": "Rust", "ecosystem": "cargo" },
+    { "name": "Java", "ecosystem": "maven" },
+    { "name": "JavaScript", "ecosystem": "npm" },
+    { "name": "C++", "ecosystem": "conan" }
+  ],
+  "format_on_disk": "Vectorized Columnar Storage (single .duckdb file)",
+  "core_strengths": [
+    "Vectorized columnar execution engine for fast OLAP queries",
+    "Zero-configuration in-process operation with no external daemon",
+    "Direct querying of Parquet, CSV, and JSON files without import",
+    "Full SQL support including window functions, CTEs, and correlated subqueries",
+    "Transactional (ACID) with multi-version concurrency control",
+    "Automatic out-of-core execution for datasets larger than memory"
+  ],
+  "best_use_cases": [
+    "Local analytical queries on Parquet/CSV data lakes",
+    "Embedded analytics inside data processing scripts and notebooks",
+    "Interactive data exploration on single-machine datasets",
+    "In-process transformation pipelines (ELT without a server)",
+    "SQL-powered DataFrame operations as a faster pandas/polars alternative"
+  ],
+  "tags": [
+    "single-file",
+    "sql-interface",
+    "columnar",
+    "persistent",
+    "in-memory",
+    "data-pipeline",
+    "embedded-only",
+    "desktop",
+    "cli"
+  ],
+  "custom_tags": [],
+  "github_stars": 38600,
+  "maintenance_status": "active",
+  "first_release_year": 2019,
+  "requires_server": false,
+  "remarks": "DuckDB is optimized for single-machine analytical (OLAP) workloads, not OLTP with high concurrent writes. The primary distribution is a C++ library; language clients (Python, R, Java, Rust) wrap it via a C API. The Rust crate duckdb-rs bundles and compiles the C++ library from source, which may be slow for first builds. DuckDB-WASM is available for browser use but is a separate build of the engine.",
+  "comparisons": [
+    "https://duckdb.org/why_duckdb",
+    "https://duckdblabs.com/benchmarks/",
+    "https://benchmarking.duckdb.org/"
+  ]
+}

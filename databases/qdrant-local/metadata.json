@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "name": "Qdrant Local Mode",
+  "slug": "qdrant-local",
+  "category": "vector",
+  "categories": ["vector"],
+  "description": "Qdrant Local Mode is an embedded, in-process implementation of the Qdrant vector search engine that runs entirely within the Python client with no external server required. It provides the full Qdrant API surface — collection CRUD, point insertion and management, vector similarity search with payload filtering, and hybrid search — using brute-force numpy-based search with optional SQLite-backed persistence. The same client code seamlessly transitions to Qdrant Server or Qdrant Cloud for production deployments. Local Mode is ideal for development, testing, prototyping, and small-scale datasets up to approximately 20,000 points per collection.",
+  "homepage_url": "https://qdrant.tech",
+  "repository_url": "https://github.com/qdrant/qdrant",
+  "license": "Apache-2.0",
+  "languages": [
+    {"name": "Python", "ecosystem": "pip"}
+  ],
+  "format_on_disk": "SQLite-backed persistence (multi-file per storage directory) or ephemeral in-memory",
+  "core_strengths": [
+    "Full Qdrant API surface in-process with zero external dependencies",
+    "Same client code transitions seamlessly to Qdrant Server or Cloud",
+    "Collection-based organization with vector similarity and payload filtering",
+    "Optional SQLite-backed persistence with file-locked exclusive access",
+    "Ephemeral in-memory mode (:memory:) for rapid testing and CI/CD",
+    "Supports dense, sparse, and multi-vector search with multiple distance metrics"
+  ],
+  "best_use_cases": [
+    "RAG (Retrieval-Augmented Generation) prototyping and local development",
+    "Unit and integration testing for Qdrant-based applications",
+    "Small-scale semantic search in local CLI and desktop tools",
+    "Learning the Qdrant API without deploying infrastructure",
+    "AI/ML experimentation with vector similarity search in notebooks"
+  ],
+  "tags": ["ai-ml", "rag", "embedded-only", "also-server", "persistent", "multi-file"],
+  "github_stars": 22000,
+  "maintenance_status": "active",
+  "first_release_year": 2020,
+  "requires_server": false,
+  "remarks": "Local Mode is designed for datasets up to ~20,000 points per collection; for larger datasets, migrate to Qdrant Server or Qdrant Cloud. Uses brute-force search rather than HNSW indexing, so search performance scales linearly with collection size. Only one process may access a persistent storage directory at a time (enforced via portalocker). Install with `pip install qdrant-client` — no separate package needed for local mode. Local Mode uses numpy-based vector operations and supports Cosine, Dot, and Euclidean distance metrics."
+}

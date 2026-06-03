@@ -1,0 +1,16 @@
+[project]
+name = "awesome-localdb-objectbox-python"
+version = "0.1.0"
+description = "Recipe examples for ObjectBox"
+requires-python = ">=3.9"
+dependencies = [
+    "objectbox>=4.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

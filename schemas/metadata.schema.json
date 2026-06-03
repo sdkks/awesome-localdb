@@ -1,0 +1,186 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/sdkks/awesome-localdb/main/schemas/metadata.schema.json",
+  "title": "Awesome Local DB — Database Metadata",
+  "description": "Schema for each databases/<slug>/metadata.json file.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "name",
+    "slug",
+    "category",
+    "categories",
+    "description",
+    "homepage_url",
+    "repository_url",
+    "license",
+    "languages"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1,
+      "description": "Schema version — bump when schema changes incompatibly."
+    },
+    "name": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 64,
+      "pattern": "^[A-Za-z0-9 ._+\\-]+$",
+      "description": "Canonical database name (e.g., 'SQLite', 'libSQL', 'DuckDB')."
+    },
+    "slug": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 48,
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "description": "URL-safe lowercased hyphenated identifier matching the directory name."
+    },
+    "category": {
+      "type": "string",
+      "enum": ["relational", "key-value", "document", "vector", "graph", "olap", "time-series", "search", "multi-model", "mobile"],
+      "description": "Primary category — the single category that best describes this database."
+    },
+    "categories": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": ["relational", "key-value", "document", "vector", "graph", "olap", "time-series", "search", "multi-model", "mobile"]
+      },
+      "description": "All applicable categories. Must include the primary category."
+    },
+    "description": {
+      "type": "string",
+      "minLength": 50,
+      "maxLength": 1500,
+      "description": "One-paragraph summary of what the database is and does, 50-200 words."
+    },
+    "homepage_url": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://",
+      "description": "Official project homepage."
+    },
+    "repository_url": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://",
+      "description": "Source code repository (usually GitHub)."
+    },
+    "license": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 64,
+      "description": "SPDX identifier or human-readable license name (e.g., 'MIT', 'Apache-2.0', 'BSL')."
+    },
+    "languages": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "required": ["name", "ecosystem"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "enum": ["Python", "Rust", "Go", "JavaScript", "TypeScript", "Java", "Kotlin", "Swift",
+                     "C", "C++", "C#", "R", "Zig", "Dart", "Erlang", "Elixir", "Ruby", "PHP",
+                     "Lua", "Clojure", "Haskell", "Scala"]
+          },
+          "ecosystem": {
+            "type": "string",
+            "enum": ["pip", "cargo", "npm", "maven", "gradle", "swiftpm", "gomod", "nuget",
+                     "conan", "vcpkg", "cpan", "composer", "luarocks", "hex", "pub", "bundler",
+                     "cabal", "stack", "clojars", "sbt"]
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "Languages for which this repo provides examples and/or the database has first-class support."
+    },
+    "format_on_disk": {
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 120,
+      "description": "Brief description of on-disk format (e.g., 'B-Tree Pages (Single File)', 'LSM-Tree (SST files + WAL)')."
+    },
+    "core_strengths": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 8,
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 3, "maxLength": 80 },
+      "description": "Short strings summarizing key technical strengths."
+    },
+    "best_use_cases": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 8,
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 3, "maxLength": 80 },
+      "description": "Short strings describing ideal scenarios."
+    },
+    "tags": {
+      "type": "array",
+      "minItems": 0,
+      "maxItems": 14,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "WASM", "browser", "reactive", "offline-first", "replication", "sync",
+          "encryption", "compression", "in-memory", "persistent", "single-file",
+          "multi-file", "sql-interface", "schemaless", "schemaful", "horizontal-scale",
+          "embedded-only", "also-server", "cloud-native", "iot", "edge", "mobile",
+          "desktop", "cli", "serverless", "data-pipeline", "ai-ml", "rag",
+          "single-writer", "multi-writer", "concurrent-readers", "copy-on-write",
+          "append-only", "columnar", "row-based", "blob-storage", "time-travel",
+          "spatial", "full-text-search", "geospatial", "json-native",
+          "vector-search", "p2p"
+        ]
+      },
+      "description": "Closed-set tags for additional categorization. See schema enum for allowed values."
+    },
+    "custom_tags": {
+      "type": "array",
+      "maxItems": 5,
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 2, "maxLength": 32, "pattern": "^[a-z][a-z0-9-]*$" },
+      "description": "Freeform tags in addition to the closed-set tags above. Requires reviewer approval."
+    },
+    "github_stars": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Approximate star count at time of addition (rounded to nearest 100)."
+    },
+    "maintenance_status": {
+      "type": "string",
+      "enum": ["active", "slow", "beta", "archived"],
+      "description": "Current maintenance status."
+    },
+    "first_release_year": {
+      "type": "integer",
+      "minimum": 1990,
+      "maximum": 2027
+    },
+    "requires_server": {
+      "type": "boolean",
+      "default": false,
+      "description": "True if this database requires a daemon/server process."
+    },
+    "remarks": {
+      "type": "string",
+      "maxLength": 1000,
+      "description": "Caveats, warnings, or notable limitations."
+    },
+    "comparisons": {
+      "type": "array",
+      "maxItems": 5,
+      "items": { "type": "string", "format": "uri", "pattern": "^https://" },
+      "description": "URLs to third-party benchmarks or comparisons."
+    }
+  },
+  "additionalProperties": false
+}

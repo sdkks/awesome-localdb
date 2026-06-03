@@ -1,0 +1,19 @@
+{
+  "name": "awesome-localdb-rxdb-javascript",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Recipe examples for RxDB",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/recipe_reactive_store.js",
+    "test": "node --test \"tests/*.js\""
+  },
+  "dependencies": {
+    "rxdb": "^17.0.0",
+    "rxjs": "^7.8.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

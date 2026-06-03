@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "name": "buntdb",
+  "slug": "buntdb",
+  "category": "key-value",
+  "categories": ["key-value"],
+  "description": "buntdb is an embeddable, in-memory key/value database for Go with custom indexing and geospatial support. It persists data to disk via an append-only file for durability, supports ACID transactions with multiple concurrent readers and a single writer, and provides B-tree and R-tree indexes for ordering, iteration, and spatial queries. JSON field indexing is powered by GJSON, enabling indexes on nested document fields. Built-in TTL expiration enables automatic item eviction.",
+  "homepage_url": "https://github.com/tidwall/buntdb",
+  "repository_url": "https://github.com/tidwall/buntdb",
+  "license": "MIT",
+  "languages": [
+    {"name": "Go", "ecosystem": "gomod"}
+  ],
+  "format_on_disk": "Append-only file (AOF) with auto-shrink compaction",
+  "core_strengths": [
+    "In-memory speed with ACID durability via append-only file persistence",
+    "Custom B-tree indexes for ordered iteration and range queries over values",
+    "Spatial indexing with R-trees supporting up to 20 dimensions and kNN queries",
+    "JSON field indexing via GJSON for querying nested document structures",
+    "TTL-based expiration for automatic item eviction without manual cleanup",
+    "Zero dependencies beyond the Go standard library and tidwall packages"
+  ],
+  "best_use_cases": [
+    "Embedded key/value store for Go apps needing in-memory speed with persistence",
+    "Local caching layer with TTL-based expiration and durable recovery",
+    "Geospatial applications requiring fast spatial intersection and kNN queries",
+    "JSON document indexing with queryable nested fields in a lightweight embedded DB",
+    "Single-binary Go applications that need ordered iteration over key spaces"
+  ],
+  "tags": ["in-memory", "persistent", "embedded-only", "spatial", "single-writer", "concurrent-readers", "append-only"],
+  "custom_tags": [],
+  "github_stars": 5000,
+  "maintenance_status": "active",
+  "first_release_year": 2016,
+  "requires_server": false,
+  "remarks": "buntdb holds the entire dataset in memory and writes to an append-only file for persistence. This means available RAM limits the dataset size; it is not suitable for datasets exceeding memory capacity. Only one writer is permitted at a time (serialized via internal locking), but multiple readers can operate concurrently. Spatial indexes support up to 20 dimensions. The AOF file is automatically compacted (shrunk) based on configurable thresholds: AutoShrinkPercentage, AutoShrinkMinSize, and AutoShrinkDisabled. For datasets that must exceed RAM, consider alternatives like bbolt or LevelDB.",
+  "comparisons": [
+    "https://github.com/tidwall/buntdb#performance"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "name": "Bleve",
+  "slug": "bleve",
+  "category": "search",
+  "categories": ["search"],
+  "description": "Bleve is a modern text, numeric, geo-spatial, and vector indexing library for Go with a simple top-level API. It supports full-text search with TF-IDF scoring, faceted search, result highlighting, and custom analyzers for 30+ languages. Bleve stores inverted indexes on disk using BoltDB as the default persistent storage backend, runs entirely in-process with zero external dependencies, and indexes any Go struct via reflection or explicit field mappings. Its query DSL supports boolean, phrase, fuzzy, term range, geo distance, and prefix queries, making it suitable for embedded search in CLI tools, desktop apps, and microservices.",
+  "homepage_url": "https://blevesearch.com",
+  "repository_url": "https://github.com/blevesearch/bleve",
+  "license": "Apache-2.0",
+  "languages": [
+    {"name": "Go", "ecosystem": "gomod"}
+  ],
+  "format_on_disk": "BoltDB-backed inverted index (B+Tree memory-mapped single file)",
+  "core_strengths": [
+    "Simple top-level API — index any Go struct without boilerplate",
+    "Full-text search with TF-IDF scoring, highlight, and faceted results",
+    "Pluggable analyzers for 30+ languages with stemming and tokenization",
+    "Rich query DSL: boolean, phrase, fuzzy, range, prefix, match, and geo distance",
+    "Zero external dependencies — pure Go, embedded in-process",
+    "BoltDB-backed persistent storage with memory-mapped B+Tree indexes"
+  ],
+  "best_use_cases": [
+    "Adding full-text search to Go CLI tools and desktop applications",
+    "Embedded search in microservices without standing up Elasticsearch",
+    "Document indexing with faceted navigation for local data catalogs",
+    "Geo-spatial search for location-aware Go applications",
+    "Building search-driven UIs with result highlighting and relevance scoring"
+  ],
+  "tags": ["full-text-search", "embedded-only", "persistent"],
+  "custom_tags": [],
+  "github_stars": 10000,
+  "maintenance_status": "active",
+  "first_release_year": 2015,
+  "requires_server": false,
+  "remarks": "Bleve uses BoltDB as the default persistent storage engine; the index is stored in a single memory-mapped file. Indexing is synchronous by default — large batch inserts should use the Batch method for better throughput. Query results are scored by default using TF-IDF; BM25 is also available as a scoring model. The mapping system allows field-level control over indexing behavior (stored, indexed, analyzed, include term vectors). Bleve is not a database — it stores only the indexed terms and document identifiers; the original documents must be stored separately unless you use the Stored field option. For high-throughput write workloads, consider tuning the batch size and using asynchronous indexing.",
+  "comparisons": [
+    "https://blevesearch.com/docs/",
+    "https://github.com/blevesearch/bleve#benchmarks"
+  ]
+}
