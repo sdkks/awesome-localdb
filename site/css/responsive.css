@@ -292,14 +292,14 @@
     display: none;
   }
 
-  /* ── Filter drawer close button ──────────────────────────────────── */
+  /* On mobile, the drawer close button is visible inside the open sidebar */
   .filter-drawer-close {
-    display: none; /* hidden on desktop, shown inside mobile drawer */
+    display: flex;
   }
 
-  /* Desktop: hide the toggle button (only for mobile) */
+  /* On mobile, the filter toggle is always visible in the search bar */
   .filter-toggle-btn {
-    display: none;
+    display: inline-flex;
   }
 
   /* ── Card grid: 2 columns at this breakpoint ──────────────────── */

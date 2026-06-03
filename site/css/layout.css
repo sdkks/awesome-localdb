@@ -225,3 +225,7 @@ details[open] .accordion-arrow {
   flex-direction: column;
   gap: 0.75rem;
 }
+
+/* Desktop: hide mobile-only filter controls */
+.filter-toggle-btn { display: none; }
+.filter-drawer-close { display: none; }
