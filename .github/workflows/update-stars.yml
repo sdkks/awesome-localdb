@@ -33,8 +33,10 @@ jobs:
         run: bash scripts/build-index.sh
 
       - name: Create or update pull request
+        id: cpr
         uses: peter-evans/create-pull-request@v7
         with:
+          token: ${{ secrets.PULL_REQUEST_TOKEN }}
           commit-message: 'chore: refresh github_stars from live API'
           title: 'chore: refresh github stars'
           body: |
@@ -43,3 +45,11 @@ jobs:
             Ran `scripts/update-stars.py` and rebuilt `site/index.json`.
           branch: chore/refresh-stars
           delete-branch: true
+
+      - name: Enable auto-merge for pull request
+        if: steps.cpr.outputs.pull-request-number != ''
+        env:
+          GH_TOKEN: ${{ secrets.PULL_REQUEST_TOKEN }}
+        run: |
+          gh pr merge "${{ steps.cpr.outputs.pull-request-number }}" \
+            --squash --auto --repo "${{ github.repository }}"
