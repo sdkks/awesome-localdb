@@ -3,13 +3,18 @@
   "name": "CogDB",
   "slug": "cogdb",
   "category": "graph",
-  "categories": ["graph"],
+  "categories": [
+    "graph"
+  ],
   "description": "CogDB is a persistent, embedded graph database for Python with zero setup. It is a triple store that models data as Node-Edge-Node (e.g. Alice-follows-Bob) and provides Torque, a fluent chainable Python API for graph traversal. CogDB includes SIMD-accelerated vector similarity search (k-nearest neighbors, cosine similarity filtering), supports loading GloVe and Gensim embeddings, and can serve graphs over HTTP. It runs in-process with no server required and works in notebooks, apps, and browsers via Pyodide.",
   "homepage_url": "https://cogdb.io",
   "repository_url": "https://github.com/arun1729/cog",
   "license": "Apache-2.0",
   "languages": [
-    {"name": "Python", "ecosystem": "pip"}
+    {
+      "name": "Python",
+      "ecosystem": "pip"
+    }
   ],
   "format_on_disk": "Persistent key-value store under COG_HOME directory (default /tmp/cog-test)",
   "core_strengths": [
@@ -27,8 +32,14 @@
     "Rapid prototyping of graph-based AI/ML pipelines",
     "Browser-based graph applications via Pyodide"
   ],
-  "tags": ["ai-ml", "rag", "embedded-only", "browser", "persistent"],
-  "github_stars": 359,
+  "tags": [
+    "ai-ml",
+    "rag",
+    "embedded-only",
+    "browser",
+    "persistent"
+  ],
+  "github_stars": 364,
   "maintenance_status": "active",
   "first_release_year": 2017,
   "requires_server": false,
