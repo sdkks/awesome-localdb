@@ -6,8 +6,9 @@ owner/repo, fetches the current stargazers_count, and writes the value back.
 
 Non-GitHub repository URLs are skipped with a warning.
 
-Requires the GitHub CLI (gh) for authentication.  In CI, GITHUB_TOKEN is used
-automatically; locally you must be logged in via ``gh auth login``.
+Requires the GitHub CLI (gh) for authentication.  gh reads the ``GH_TOKEN``
+environment variable; the update-stars workflow sets it from ``GITHUB_TOKEN``.
+Locally you must be logged in via ``gh auth login``.
 
 Usage:
   python3 scripts/update-stars.py              # update all databases

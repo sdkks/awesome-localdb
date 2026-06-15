@@ -25,6 +25,8 @@ jobs:
         run: pip install jsonschema
 
       - name: Update github_stars from live API
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 scripts/update-stars.py
 
       - name: Rebuild site index
