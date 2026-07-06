@@ -1,0 +1,118 @@
+name: Star Refresh PR Guard
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  guard:
+    name: star-refresh-guard
+    runs-on: ubuntu-latest
+    steps:
+      - name: Skip non-star-refresh PRs
+        if: github.head_ref != 'chore/refresh-stars'
+        run: echo "Not the scheduled star refresh branch; nothing to guard."
+
+      - name: Checkout PR head safely
+        if: github.head_ref == 'chore/refresh-stars'
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Verify scheduled star refresh PR shape
+        if: github.head_ref == 'chore/refresh-stars'
+        env:
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+          HEAD_REPO: ${{ github.event.pull_request.head.repo.full_name }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+
+          if [ "$BASE_REF" != "main" ]; then
+            echo "Star refresh PR must target main, got: $BASE_REF" >&2
+            exit 1
+          fi
+
+          if [ "$HEAD_REF" != "chore/refresh-stars" ]; then
+            echo "Star refresh PR must come from chore/refresh-stars, got: $HEAD_REF" >&2
+            exit 1
+          fi
+
+          if [ "$HEAD_REPO" != "$REPO" ]; then
+            echo "Star refresh PR must come from this repository, got: $HEAD_REPO" >&2
+            exit 1
+          fi
+
+          git fetch --no-tags --depth=1 origin "$BASE_REF:refs/remotes/origin/$BASE_REF"
+
+          python3 - <<'PY'
+          import json
+          import os
+          import subprocess
+          import sys
+          from pathlib import Path
+
+          base = f"refs/remotes/origin/{os.environ['BASE_REF']}"
+          diff_cmd = ["git", "diff", "--name-only", f"{base}...HEAD"]
+          changed = subprocess.check_output(diff_cmd, text=True).splitlines()
+
+          if not changed:
+              print("No files changed in star refresh PR.")
+              sys.exit(0)
+
+          def is_allowed_path(path: str) -> bool:
+              return (
+                  path in {"site/index.json", "site/filter-options.json"}
+                  or (
+                      path.startswith("databases/")
+                      and path.endswith("/metadata.json")
+                      and len(Path(path).parts) == 3
+                  )
+              )
+
+          unexpected = [path for path in changed if not is_allowed_path(path)]
+          if unexpected:
+              print("Unexpected files in star refresh PR:", file=sys.stderr)
+              for path in unexpected:
+                  print(f"  {path}", file=sys.stderr)
+              sys.exit(1)
+
+          for path in changed:
+              if not (path.startswith("databases/") and path.endswith("/metadata.json")):
+                  continue
+
+              try:
+                  old_raw = subprocess.check_output(["git", "show", f"{base}:{path}"], text=True)
+              except subprocess.CalledProcessError:
+                  print(f"Metadata file must already exist on main: {path}", file=sys.stderr)
+                  sys.exit(1)
+
+              old = json.loads(old_raw)
+              new = json.loads(Path(path).read_text())
+
+              old_stars = old.get("github_stars")
+              new_stars = new.get("github_stars")
+              old_without_stars = dict(old)
+              new_without_stars = dict(new)
+              old_without_stars.pop("github_stars", None)
+              new_without_stars.pop("github_stars", None)
+
+              if old_without_stars != new_without_stars:
+                  print(f"Only github_stars may change in {path}", file=sys.stderr)
+                  sys.exit(1)
+
+              if not isinstance(new_stars, int) or new_stars < 0:
+                  print(f"github_stars must be a non-negative integer in {path}", file=sys.stderr)
+                  sys.exit(1)
+
+              print(f"{path}: github_stars {old_stars} -> {new_stars}")
+
+          print("Star refresh PR guard passed.")
+          PY

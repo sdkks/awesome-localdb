@@ -10,14 +10,18 @@ permissions:
   contents: write
   pull-requests: write
 
+env:
+  STAR_UPDATE_BRANCH: chore/refresh-stars
+  STAR_UPDATE_BASE: main
+
 jobs:
   update-stars:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
 
@@ -34,7 +38,7 @@ jobs:
 
       - name: Create or update pull request
         id: cpr
-        uses: peter-evans/create-pull-request@v7
+        uses: peter-evans/create-pull-request@v8
         with:
           token: ${{ secrets.PULL_REQUEST_TOKEN }}
           commit-message: 'chore: refresh github_stars from live API'
@@ -43,11 +47,116 @@ jobs:
             Weekly automated update of `github_stars` in metadata files.
 
             Ran `scripts/update-stars.py` and rebuilt `site/index.json`.
-          branch: chore/refresh-stars
+
+            Safety notes:
+            - Auto-merge is skipped unless the repository variable `ENABLE_STAR_AUTO_MERGE` is set to `true`.
+            - If auto-merge is enabled, the workflow first verifies this PR comes from `chore/refresh-stars` in this repository.
+            - The `Star Refresh PR Guard` check rejects changes outside star metadata and generated site index files.
+          branch: ${{ env.STAR_UPDATE_BRANCH }}
           delete-branch: true
 
+      - name: Auto-merge disabled by default
+        if: steps.cpr.outputs.pull-request-number != '' && vars.ENABLE_STAR_AUTO_MERGE != 'true'
+        run: |
+          echo "Created/updated PR #${{ steps.cpr.outputs.pull-request-number }}."
+          echo "Skipping auto-merge because repository variable ENABLE_STAR_AUTO_MERGE is not 'true'."
+
+      - name: Verify automation pull request before auto-merge
+        if: steps.cpr.outputs.pull-request-number != '' && vars.ENABLE_STAR_AUTO_MERGE == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.PULL_REQUEST_TOKEN }}
+          PR_NUMBER: ${{ steps.cpr.outputs.pull-request-number }}
+        run: |
+          set -euo pipefail
+
+          pr_json="$(gh pr view "$PR_NUMBER" --repo "${{ github.repository }}" \
+            --json baseRefName,headRefName,headRepositoryOwner,isCrossRepository)"
+
+          base_ref="$(jq -r '.baseRefName' <<<"$pr_json")"
+          head_ref="$(jq -r '.headRefName' <<<"$pr_json")"
+          head_owner="$(jq -r '.headRepositoryOwner.login' <<<"$pr_json")"
+          is_cross_repo="$(jq -r '.isCrossRepository' <<<"$pr_json")"
+
+          if [ "$base_ref" != "$STAR_UPDATE_BASE" ]; then
+            echo "Refusing auto-merge: expected base $STAR_UPDATE_BASE, got $base_ref" >&2
+            exit 1
+          fi
+
+          if [ "$head_ref" != "$STAR_UPDATE_BRANCH" ]; then
+            echo "Refusing auto-merge: expected head branch $STAR_UPDATE_BRANCH, got $head_ref" >&2
+            exit 1
+          fi
+
+          if [ "$head_owner" != "${{ github.repository_owner }}" ] || [ "$is_cross_repo" != "false" ]; then
+            echo "Refusing auto-merge: PR must come from this repository, got owner=$head_owner cross_repo=$is_cross_repo" >&2
+            exit 1
+          fi
+
+          git fetch --no-tags --depth=1 origin \
+            "$STAR_UPDATE_BASE:refs/remotes/origin/$STAR_UPDATE_BASE" \
+            "$STAR_UPDATE_BRANCH:refs/remotes/origin/$STAR_UPDATE_BRANCH"
+
+          python3 - <<'PY'
+          import json
+          import os
+          import subprocess
+          import sys
+          from pathlib import Path
+
+          base = f"refs/remotes/origin/{os.environ['STAR_UPDATE_BASE']}"
+          head = f"refs/remotes/origin/{os.environ['STAR_UPDATE_BRANCH']}"
+          changed = subprocess.check_output(
+              ["git", "diff", "--name-only", f"{base}...{head}"],
+              text=True,
+          ).splitlines()
+
+          def is_allowed_path(path: str) -> bool:
+              return (
+                  path in {"site/index.json", "site/filter-options.json"}
+                  or (
+                      path.startswith("databases/")
+                      and path.endswith("/metadata.json")
+                      and len(Path(path).parts) == 3
+                  )
+              )
+
+          unexpected = [path for path in changed if not is_allowed_path(path)]
+          if unexpected:
+              print("Refusing auto-merge: unexpected files changed:", file=sys.stderr)
+              for path in unexpected:
+                  print(f"  {path}", file=sys.stderr)
+              sys.exit(1)
+
+          for path in changed:
+              if not (path.startswith("databases/") and path.endswith("/metadata.json")):
+                  continue
+
+              old = json.loads(subprocess.check_output(["git", "show", f"{base}:{path}"], text=True))
+              new = json.loads(subprocess.check_output(["git", "show", f"{head}:{path}"], text=True))
+
+              old_without_stars = dict(old)
+              new_without_stars = dict(new)
+              old_without_stars.pop("github_stars", None)
+              new_stars = new_without_stars.pop("github_stars", None)
+
+              if old_without_stars != new_without_stars:
+                  print(f"Refusing auto-merge: only github_stars may change in {path}", file=sys.stderr)
+                  sys.exit(1)
+
+              if not isinstance(new.get("github_stars"), int) or new["github_stars"] < 0:
+                  print(f"Refusing auto-merge: github_stars must be a non-negative integer in {path}", file=sys.stderr)
+                  sys.exit(1)
+
+          print("Automation PR shape is safe for auto-merge request.")
+          PY
+
+          git checkout --detach "refs/remotes/origin/$STAR_UPDATE_BRANCH"
+          python3 scripts/validate-metadata.py
+          bash scripts/build-index.sh
+          git diff --exit-code site/index.json site/filter-options.json
+
       - name: Enable auto-merge for pull request
-        if: steps.cpr.outputs.pull-request-number != ''
+        if: steps.cpr.outputs.pull-request-number != '' && vars.ENABLE_STAR_AUTO_MERGE == 'true'
         env:
           GH_TOKEN: ${{ secrets.PULL_REQUEST_TOKEN }}
         run: |
