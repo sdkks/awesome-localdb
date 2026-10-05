@@ -58,7 +58,7 @@
     "single-writer",
     "concurrent-readers"
   ],
-  "github_stars": 4000,
+  "github_stars": 4025,
   "maintenance_status": "active",
   "first_release_year": 2022,
   "requires_server": false,
